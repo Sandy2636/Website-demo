@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods - Premium Ice Cream & Café | Pune</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .hero {
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.9),
+            rgba(255, 255, 255, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1744&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .flavor-nav {
+        scrollbar-width: none;
+      }
+      .flavor-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-800">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <!-- Logo -->
+        <div class="flex items-center">
+          <div
+            class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3"
+          >
+            <i class="fas fa-ice-cream text-xl"></i>
+          </div>
+          <h1 class="text-xl font-bold">Kiga Foods</h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8 items-center">
+          <a href="#home" class="hover:text-red-600 transition">Home</a>
+          <a href="#menu" class="hover:text-red-600 transition">Menu</a>
+          <a href="#franchise" class="hover:text-red-600 transition"
+            >Franchise</a
+          >
+          <a href="#locations" class="hover:text-red-600 transition"
+            >Store Locator</a
+          >
+          <a href="#about" class="hover:text-red-600 transition">About Us</a>
+          <a href="#contact" class="hover:text-red-600 transition">Contact</a>
+          <button id="search-btn" class="ml-4 text-gray-600 hover:text-red-600">
+            <i class="fas fa-search"></i>
+          </button>
+          <button
+            id="cart-btn-header"
+            class="relative ml-4 text-gray-600 hover:text-red-600"
+          >
+            <i class="fas fa-shopping-cart"></i>
+            <span
+              id="cart-count-header"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center hidden"
+              >0</span
+            >
+          </button>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-btn" class="md:hidden text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white px-4 py-2 shadow-md"
+      >
+        <a href="#home" class="block py-2 hover:text-red-600 transition"
+          >Home</a
+        >
+        <a href="#menu" class="block py-2 hover:text-red-600 transition"
+          >Menu</a
+        >
+        <a href="#franchise" class="block py-2 hover:text-red-600 transition"
+          >Franchise</a
+        >
+        <a href="#locations" class="block py-2 hover:text-red-600 transition"
+          >Store Locator</a
+        >
+        <a href="#about" class="block py-2 hover:text-red-600 transition"
+          >About Us</a
+        >
+        <a href="#contact" class="block py-2 hover:text-red-600 transition"
+          >Contact</a
+        >
+        <div class="flex py-2">
+          <button
+            id="search-btn-mobile"
+            class="mr-4 text-gray-600 hover:text-red-600"
+          >
+            <i class="fas fa-search"></i> Search
+          </button>
+          <button id="cart-btn-mobile" class="text-gray-600 hover:text-red-600">
+            <i class="fas fa-shopping-cart"></i> Cart
+            <span
+              id="cart-count-mobile"
+              class="bg-red-600 text-white text-xs px-1 rounded-full ml-1 hidden"
+              >0</span
+            >
+          </button>
+        </div>
+      </div>
+
+      <!-- Search Bar -->
+      <div id="search-bar" class="hidden bg-white border-t px-4 py-3">
+        <div class="container mx-auto flex">
+          <input
+            type="text"
+            placeholder="Search flavors, products..."
+            class="flex-grow px-4 py-2 border rounded-l focus:outline-none focus:ring-1 focus:ring-red-500"
+          />
+          <button
+            class="bg-red-600 text-white px-4 py-2 rounded-r hover:bg-red-700 transition"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero py-20 md:py-32">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-4">
+          Premium Ice Cream & Café
+        </h2>
+        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          Handcrafted with fresh ingredients since 2017
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a
+            href="#menu"
+            class="bg-red-600 text-white px-8 py-3 rounded-full font-bold hover:bg-red-700 transition"
+            >Our Menu</a
+          >
+          <a
+            href="#locations"
+            class="border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-bold hover:bg-red-50 transition"
+            >Find a Store</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section id="menu" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Our Menu</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Discover our delicious range of ice creams, cold coffees, and snacks
+          made with premium ingredients
+        </p>
+
+        <!-- Flavor Navigation -->
+        <div class="flex overflow-x-auto flavor-nav pb-6 mb-8">
+          <div class="flex space-x-2 mx-auto">
+            <button
+              class="flavor-btn active px-6 py-2 bg-red-600 text-white rounded-full whitespace-nowrap"
+              data-category="all"
+            >
+              All Items
+            </button>
+            <button
+              class="flavor-btn px-6 py-2 bg-white rounded-full whitespace-nowrap"
+              data-category="icecream"
+            >
+              Ice Creams
+            </button>
+            <button
+              class="flavor-btn px-6 py-2 bg-white rounded-full whitespace-nowrap"
+              data-category="coffee"
+            >
+              Cold Coffee
+            </button>
+            <button
+              class="flavor-btn px-6 py-2 bg-white rounded-full whitespace-nowrap"
+              data-category="snacks"
+            >
+              Snacks
+            </button>
+            <button
+              class="flavor-btn px-6 py-2 bg-white rounded-full whitespace-nowrap"
+              data-category="specials"
+            >
+              Seasonal Specials
+            </button>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Product 1 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="icecream"
+          >
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Classic Vanilla"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded"
+                >Bestseller</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Classic Vanilla</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Made with Madagascar vanilla beans
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹120</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="icecream"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1621841957884-1210fe19e396?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Chocolate Fudge"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Chocolate Fudge</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Rich Belgian chocolate with fudge swirls
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹140</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="coffee"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1517701550928-30a09b2a2c6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Iced Caramel Latte"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Iced Caramel Latte</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Arabica coffee with caramel sauce
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹150</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="snacks"
+          >
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80"
+                alt="Chocolate Chip Cookie"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded"
+                >New</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Chocolate Chip Cookie</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Freshly baked with premium chocolate
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹60</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="icecream"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=627&q=80"
+              alt="Strawberry Swirl"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Strawberry Swirl</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                With fresh Mahabaleshwar strawberries
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹130</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="coffee"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1517701550928-30a09b2a2c6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Mocha Frappe"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Mocha Frappe</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Blended coffee with chocolate syrup
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹160</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="specials"
+          >
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+                alt="Mango Delight"
+                class="w-full h-48 object-cover"
+              />
+              <span
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded"
+                >Seasonal</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Mango Delight</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Made with Alphonso mangoes
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹150</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 8 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+            data-category="snacks"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80"
+              alt="Brownie Sundae"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-1">Brownie Sundae</h3>
+              <p class="text-gray-600 text-sm mb-3">
+                Fudgy brownie with ice cream
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-red-600">₹180</span>
+                <button
+                  class="add-to-cart bg-red-600 text-white px-3 py-1 rounded text-sm hover:bg-red-700 transition"
+                >
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-bold hover:bg-red-600 hover:text-white transition"
+            >View Full Menu</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+            <h2 class="text-3xl font-bold mb-6">Our Story</h2>
+            <p class="mb-4">
+              Founded in 2017 in Pune, Kiga Foods began as a small ice cream
+              shop with a passion for creating exceptional frozen treats using
+              only the finest natural ingredients.
+            </p>
+            <p class="mb-4">
+              What started as a single location has grown into a beloved brand
+              across Maharashtra, known for our commitment to quality,
+              innovation, and customer satisfaction.
+            </p>
+            <p>
+              Today, we continue to honor our roots while expanding our
+              offerings to include premium ice creams, cold coffee drinks, and
+              delicious snacks, all made with the same dedication to quality
+              that defined our beginnings.
+            </p>
+          </div>
+          <div class="lg:w-1/2">
+            <img
+              src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Kiga Foods Team"
+              class="rounded-lg shadow-xl"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"
+            >
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Natural Ingredients</h3>
+            <p class="text-gray-600">
+              We source fresh fruits, dairy, and other ingredients from trusted
+              local suppliers.
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"
+            >
+              <i class="fas fa-award"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Quality Craftsmanship</h3>
+            <p class="text-gray-600">
+              Each product is carefully crafted by our experienced team using
+              traditional methods.
+            </p>
+          </div>
+          <div class="text-center p-6 bg-gray-50 rounded-lg">
+            <div
+              class="bg-red-600 text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"
+            >
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Customer Love</h3>
+            <p class="text-gray-600">
+              We're committed to creating memorable experiences for every
+              customer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">From Our Blog</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Discover the latest news, seasonal flavors, and behind-the-scenes
+          stories
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Blog 1 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md transition hover:shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80"
+              alt="Summer Flavors"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-red-600">June 15, 2023</span>
+              <h3 class="text-xl font-bold my-2">
+                Introducing Our Summer Special Flavors
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover our new seasonal flavors featuring fresh summer fruits
+                from local farms.
+              </p>
+              <a href="#" class="text-red-600 font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Blog 2 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md transition hover:shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Behind the Scenes"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-red-600">May 28, 2023</span>
+              <h3 class="text-xl font-bold my-2">
+                A Day in Our Ice Cream Kitchen
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Take a peek behind the scenes to see how we craft our premium
+                ice creams.
+              </p>
+              <a href="#" class="text-red-600 font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+
+          <!-- Blog 3 -->
+          <div
+            class="bg-white rounded-lg overflow-hidden shadow-md transition hover:shadow-lg"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=689&q=80"
+              alt="Sustainability"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-6">
+              <span class="text-sm text-red-600">April 10, 2023</span>
+              <h3 class="text-xl font-bold my-2">
+                Our Commitment to Sustainability
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Learn about our eco-friendly initiatives and packaging
+                solutions.
+              </p>
+              <a href="#" class="text-red-600 font-medium hover:underline"
+                >Read More</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block border-2 border-red-600 text-red-600 px-8 py-3 rounded-full font-bold hover:bg-red-600 hover:text-white transition"
+            >View All Posts</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Locations -->
+    <section id="locations" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Find Us Near You</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Visit one of our locations across Pune and experience the Kiga
+          difference
+        </p>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-6 rounded-lg h-full">
+              <h3 class="text-xl font-bold mb-6">Our Stores</h3>
+
+              <div class="space-y-6">
+                <!-- Location 1 -->
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Kiga Foods - Kothrud</h4>
+                    <p class="text-gray-600">
+                      123 Ice Cream Street, Kothrud, Pune
+                    </p>
+                    <p class="text-gray-600">Open: 10AM - 10PM Daily</p>
+                    <p class="text-gray-600">Phone: +91 9876543210</p>
+                    <button class="mt-2 text-red-600 hover:underline">
+                      Get Directions
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Kiga Foods - Viman Nagar</h4>
+                    <p class="text-gray-600">
+                      456 Dessert Avenue, Viman Nagar, Pune
+                    </p>
+                    <p class="text-gray-600">Open: 11AM - 11PM Daily</p>
+                    <p class="text-gray-600">Phone: +91 9876543211</p>
+                    <button class="mt-2 text-red-600 hover:underline">
+                      Get Directions
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Location 3 -->
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Kiga Foods - Baner</h4>
+                    <p class="text-gray-600">789 Frosty Lane, Baner, Pune</p>
+                    <p class="text-gray-600">Open: 10AM - 10PM Daily</p>
+                    <p class="text-gray-600">Phone: +91 9876543212</p>
+                    <button class="mt-2 text-red-600 hover:underline">
+                      Get Directions
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="bg-gray-100 h-full rounded-lg overflow-hidden">
+              <!-- Map placeholder - in a real implementation you would use Google Maps API -->
+              <div class="h-full flex items-center justify-center bg-gray-200">
+                <div class="text-center p-8">
+                  <i
+                    class="fas fa-map-marked-alt text-5xl text-red-600 mb-4"
+                  ></i>
+                  <h3 class="text-xl font-bold mb-2">
+                    Interactive Store Locator
+                  </h3>
+                  <p class="mb-4">
+                    Find the nearest Kiga Foods location with our interactive
+                    map.
+                  </p>
+                  <button
+                    class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700 transition"
+                  >
+                    View Full Map
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Franchise Opportunity -->
+    <section id="franchise" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-bold text-center mb-4">Franchise With Us</h2>
+          <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Join the Kiga Foods family and bring premium ice cream experiences
+            to your community
+          </p>
+
+          <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="flex flex-col md:flex-row">
+              <div class="md:w-1/2 p-8">
+                <h3 class="text-2xl font-bold mb-4 text-red-600">
+                  Why Franchise With Kiga?
+                </h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start">
+                    <div
+                      class="bg-red-100 text-red-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1"
+                    >
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Proven Business Model</h4>
+                      <p class="text-gray-600">
+                        Benefit from our established brand and operational
+                        systems
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="bg-red-100 text-red-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1"
+                    >
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Comprehensive Training</h4>
+                      <p class="text-gray-600">
+                        We provide complete training for you and your staff
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="bg-red-100 text-red-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1"
+                    >
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Marketing Support</h4>
+                      <p class="text-gray-600">
+                        National and local marketing campaigns to drive
+                        customers
+                      </p>
+                    </div>
+                  </li>
+                  <li class="flex items-start">
+                    <div
+                      class="bg-red-100 text-red-600 rounded-full w-8 h-8 flex items-center justify-center mr-3 mt-1"
+                    >
+                      <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">Ongoing Assistance</h4>
+                      <p class="text-gray-600">
+                        Continuous support from our experienced team
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="md:w-1/2 bg-red-600 text-white p-8">
+                <h3 class="text-2xl font-bold mb-6">Franchise Inquiry</h3>
+                <form id="franchise-form" class="space-y-4">
+                  <div>
+                    <label for="name" class="block mb-1">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+                    />
+                  </div>
+                  <div>
+                    <label for="email" class="block mb-1">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+                    />
+                  </div>
+                  <div>
+                    <label for="phone" class="block mb-1">Phone</label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+                    />
+                  </div>
+                  <div>
+                    <label for="city" class="block mb-1"
+                      >Preferred City/Location</label
+                    >
+                    <input
+                      type="text"
+                      id="city"
+                      class="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+                    />
+                  </div>
+                  <div>
+                    <label for="experience" class="block mb-1"
+                      >Business Experience (if any)</label
+                    >
+                    <textarea
+                      id="experience"
+                      rows="3"
+                      class="w-full px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-white text-gray-800"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    class="w-full bg-white text-red-600 py-3 rounded font-bold hover:bg-gray-100 transition"
+                  >
+                    Submit Inquiry
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-16 bg-red-600 text-white">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+          <p class="mb-8 max-w-2xl mx-auto">
+            Subscribe to our newsletter for seasonal flavors, special
+            promotions, and store openings.
+          </p>
+
+          <form class="flex flex-col sm:flex-row max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-3 rounded sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-white text-gray-800 mb-2 sm:mb-0"
+            />
+            <button
+              type="submit"
+              class="bg-white text-red-600 px-6 py-3 font-bold rounded sm:rounded-l-none hover:bg-gray-100 transition"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-4">Contact Us</h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Have questions or feedback? We'd love to hear from you!
+        </p>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-8 rounded-lg h-full">
+              <h3 class="text-xl font-bold mb-6">Get in Touch</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Headquarters</h4>
+                    <p class="text-gray-600">
+                      123 Ice Cream Street, Kothrud, Pune, Maharashtra 411038
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Customer Service</h4>
+                    <p class="text-gray-600">+91 9876543210</p>
+                    <p class="text-gray-600">Mon-Sun: 9AM-9PM</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <div
+                    class="bg-red-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4 text-lg"
+                  >
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold">Email</h4>
+                    <p class="text-gray-600">info@kigafoods.com</p>
+                    <p class="text-gray-600">support@kigafoods.com</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-bold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-700 transition"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-700 transition"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-700 transition"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="bg-red-600 text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-red-700 transition"
+                  >
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-8 rounded-lg h-full">
+              <h3 class="text-xl font-bold mb-6">Send Us a Message</h3>
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label for="name" class="block mb-1">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                    />
+                  </div>
+                  <div>
+                    <label for="email" class="block mb-1">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label for="subject" class="block mb-1">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                  />
+                </div>
+                <div>
+                  <label for="message" class="block mb-1">Message</label>
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-red-600 text-white py-3 rounded font-bold hover:bg-red-700 transition"
+                >
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <div
+                class="bg-red-600 text-white rounded-full w-10 h-10 flex items-center justify-center mr-3"
+              >
+                <i class="fas fa-ice-cream"></i>
+              </div>
+              <h3 class="text-xl font-bold text-white">Kiga Foods</h3>
+            </div>
+            <p class="mb-4">
+              Premium ice cream and café experiences crafted with love in Pune
+              since 2017.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white transition"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="hover:text-white transition">Home</a>
+              </li>
+              <li>
+                <a href="#menu" class="hover:text-white transition">Menu</a>
+              </li>
+              <li>
+                <a href="#franchise" class="hover:text-white transition"
+                  >Franchise</a
+                >
+              </li>
+              <li>
+                <a href="#locations" class="hover:text-white transition"
+                  >Store Locator</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="hover:text-white transition"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-4">Products</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-white transition">Ice Creams</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Cold Coffees</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Snacks</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Seasonal Specials</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Gift Cards</a>
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition">Merchandise</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Cookie Policy</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Franchise Agreement</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Nutrition Information</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition"
+                  >Allergen Information</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p>&copy; 2023 Kiga Foods. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Shopping Cart Sidebar -->
+    <div
+      id="cart-sidebar"
+      class="fixed top-0 right-0 w-full sm:w-96 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 z-50 overflow-y-auto"
+    >
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold">Your Cart</h3>
+          <button
+            id="close-cart"
+            class="text-2xl text-gray-500 hover:text-red-600"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div id="cart-items" class="space-y-4">
+          <!-- Cart items will be added here dynamically -->
+          <div class="text-center py-8">
+            <i class="fas fa-shopping-cart text-4xl text-gray-300 mb-4"></i>
+            <p>Your cart is empty</p>
+            <a
+              href="#menu"
+              class="inline-block mt-4 text-red-600 hover:underline"
+              >Browse Menu</a
+            >
+          </div>
+        </div>
+
+        <div id="cart-summary" class="border-t pt-4 mt-4 hidden">
+          <div class="flex justify-between mb-2">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal">₹0.00</span>
+          </div>
+          <div class="flex justify-between mb-2">
+            <span>Tax (5%):</span>
+            <span id="cart-tax">₹0.00</span>
+          </div>
+          <div class="flex justify-between mb-4">
+            <span>Delivery:</span>
+            <span id="cart-delivery">₹40.00</span>
+          </div>
+          <div class="flex justify-between font-bold text-lg border-t pt-2">
+            <span>Total:</span>
+            <span id="cart-total">₹40.00</span>
+          </div>
+
+          <button
+            class="w-full bg-red-600 text-white py-3 rounded font-bold mt-6 hover:bg-red-700 transition"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div
+      id="cart-overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"
+    ></div>
+
+    <!-- Floating Cart Button -->
+    <button
+      id="cart-button"
+      class="fixed bottom-6 right-6 bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-red-700 transition z-30"
+    >
+      <i class="fas fa-shopping-cart text-xl"></i>
+      <span
+        id="cart-count"
+        class="absolute -top-2 -right-2 bg-white text-red-600 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold hidden"
+        >0</span
+      >
+    </button>
+
+    <script>
+      // Mobile Menu Toggle
+      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Search Toggle
+      const searchBtn = document.getElementById("search-btn");
+      const searchBtnMobile = document.getElementById("search-btn-mobile");
+      const searchBar = document.getElementById("search-bar");
+
+      searchBtn.addEventListener("click", () => {
+        searchBar.classList.toggle("hidden");
+      });
+
+      searchBtnMobile.addEventListener("click", () => {
+        searchBar.classList.toggle("hidden");
+        mobileMenu.classList.add("hidden");
+      });
+
+      // Cart Functionality
+      const cartButton = document.getElementById("cart-button");
+      const cartBtnHeader = document.getElementById("cart-btn-header");
+      const cartBtnMobile = document.getElementById("cart-btn-mobile");
+      const cartSidebar = document.getElementById("cart-sidebar");
+      const cartOverlay = document.getElementById("cart-overlay");
+      const closeCart = document.getElementById("close-cart");
+      const cartItems = document.getElementById("cart-items");
+      const cartSummary = document.getElementById("cart-summary");
+      const cartCount = document.getElementById("cart-count");
+      const cartCountHeader = document.getElementById("cart-count-header");
+      const cartCountMobile = document.getElementById("cart-count-mobile");
+      const cartSubtotal = document.getElementById("cart-subtotal");
+      const cartTax = document.getElementById("cart-tax");
+      const cartTotal = document.getElementById("cart-total");
+
+      let cart = [];
+
+      // Toggle Cart
+      function toggleCart() {
+        cartSidebar.classList.toggle("translate-x-full");
+        cartOverlay.classList.toggle("hidden");
+        document.body.classList.toggle("overflow-hidden");
+      }
+
+      cartButton.addEventListener("click", toggleCart);
+      cartBtnHeader.addEventListener("click", toggleCart);
+      cartBtnMobile.addEventListener("click", () => {
+        toggleCart();
+        mobileMenu.classList.add("hidden");
+      });
+      closeCart.addEventListener("click", toggleCart);
+      cartOverlay.addEventListener("click", toggleCart);
+
+      // Add to Cart
+      const addToCartButtons = document.querySelectorAll(".add-to-cart");
+
+      addToCartButtons.forEach((button) => {
+        button.addEventListener("click", (e) => {
+          const productCard = e.target.closest(".product-card");
+          const productName = productCard.querySelector("h3").textContent;
+          const productPrice = productCard
+            .querySelector("span")
+            .textContent.replace("₹", "");
+          const productImg = productCard.querySelector("img").src;
+          const productDesc = productCard.querySelector("p").textContent;
+
+          // Add to cart array
+          cart.push({
+            name: productName,
+            price: parseFloat(productPrice),
+            img: productImg,
+            desc: productDesc,
+          });
+
+          // Update cart UI
+          updateCartUI();
+
+          // Show success message
+          const successMsg = document.createElement("div");
+          successMsg.className =
+            "fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded shadow-lg z-50 animate-fade-in";
+          successMsg.innerHTML = `<i class="fas fa-check-circle mr-2"></i> ${productName} added to cart!`;
+          document.body.appendChild(successMsg);
+
+          setTimeout(() => {
+            successMsg.classList.add(
+              "opacity-0",
+              "transition-opacity",
+              "duration-300"
+            );
+            setTimeout(() => {
+              successMsg.remove();
+            }, 300);
+          }, 2000);
+        });
+      });
+
+      // Update Cart UI
+      function updateCartUI() {
+        // Update cart count
+        const itemCount = cart.length;
+        cartCount.textContent = itemCount;
+        cartCountHeader.textContent = itemCount;
+        cartCountMobile.textContent = itemCount;
+
+        if (itemCount > 0) {
+          cartCount.classList.remove("hidden");
+          cartCountHeader.classList.remove("hidden");
+          cartCountMobile.classList.remove("hidden");
+        } else {
+          cartCount.classList.add("hidden");
+          cartCountHeader.classList.add("hidden");
+          cartCountMobile.classList.add("hidden");
+        }
+
+        // Clear cart items
+        cartItems.innerHTML = "";
+
+        if (itemCount === 0) {
+          cartItems.innerHTML = `
+                    <div class="text-center py-8">
+                        <i class="fas fa-shopping-cart text-4xl text-gray-300 mb-4"></i>
+                        <p>Your cart is empty</p>
+                        <a href="#menu" class="inline-block mt-4 text-red-600 hover:underline">Browse Menu</a>
+                    </div>
+                `;
+          cartSummary.classList.add("hidden");
+          return;
+        }
+
+        // Add cart items
+        let subtotal = 0;
+
+        cart.forEach((item, index) => {
+          subtotal += item.price;
+
+          const cartItem = document.createElement("div");
+          cartItem.className = "flex items-start border-b pb-4";
+          cartItem.innerHTML = `
+                    <img src="${item.img}" alt="${
+            item.name
+          }" class="w-16 h-16 object-cover rounded mr-4">
+                    <div class="flex-grow">
+                        <h4 class="font-bold">${item.name}</h4>
+                        <p class="text-sm text-gray-600">${item.desc}</p>
+                        <div class="flex justify-between items-center mt-1">
+                            <span class="font-bold text-red-600">₹${item.price.toFixed(
+                              2
+                            )}</span>
+                            <div class="flex items-center">
+                                <button class="quantity-btn decrease text-gray-500 hover:text-red-600 px-2" data-index="${index}">
+                                    <i class="fas fa-minus text-xs"></i>
+                                </button>
+                                <span class="quantity mx-2">1</span>
+                                <button class="quantity-btn increase text-gray-500 hover:text-red-600 px-2" data-index="${index}">
+                                    <i class="fas fa-plus text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="remove-item text-gray-500 hover:text-red-600 ml-2" data-index="${index}">
+                        <i class="fas fa-times"></i>
+                    </button>
+                `;
+          cartItems.appendChild(cartItem);
+        });
+
+        // Add quantity functionality
+        document.querySelectorAll(".quantity-btn").forEach((button) => {
+          button.addEventListener("click", (e) => {
+            const index = parseInt(
+              e.target.closest("button").getAttribute("data-index")
+            );
+            const quantityElement = e.target
+              .closest("div")
+              .querySelector(".quantity");
+            let quantity = parseInt(quantityElement.textContent);
+
+            if (e.target.closest("button").classList.contains("increase")) {
+              quantity++;
+              cart[index].price =
+                (cart[index].price / (quantity - 1)) * quantity;
+            } else if (
+              e.target.closest("button").classList.contains("decrease") &&
+              quantity > 1
+            ) {
+              quantity--;
+              cart[index].price =
+                (cart[index].price / (quantity + 1)) * quantity;
+            }
+
+            quantityElement.textContent = quantity;
+            updateCartUI();
+          });
+        });
+
+        // Add remove item functionality
+        document.querySelectorAll(".remove-item").forEach((button) => {
+          button.addEventListener("click", (e) => {
+            const index = parseInt(
+              e.target.closest("button").getAttribute("data-index")
+            );
+            cart.splice(index, 1);
+            updateCartUI();
+          });
+        });
+
+        // Update summary
+        const tax = subtotal * 0.05; // 5% tax
+        const delivery = 40.0;
+        const total = subtotal + tax + delivery;
+
+        cartSubtotal.textContent = `₹${subtotal.toFixed(2)}`;
+        cartTax.textContent = `₹${tax.toFixed(2)}`;
+        cartTotal.textContent = `₹${total.toFixed(2)}`;
+
+        cartSummary.classList.remove("hidden");
+      }
+
+      // Filter products by category
+      const flavorButtons = document.querySelectorAll(".flavor-btn");
+
+      flavorButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Update active button
+          flavorButtons.forEach((btn) => {
+            btn.classList.remove("active", "bg-red-600", "text-white");
+            btn.classList.add("bg-white");
+          });
+          button.classList.add("active", "bg-red-600", "text-white");
+          button.classList.remove("bg-white");
+
+          const category = button.getAttribute("data-category");
+          const productCards = document.querySelectorAll(".product-card");
+
+          productCards.forEach((card) => {
+            if (
+              category === "all" ||
+              card.getAttribute("data-category") === category
+            ) {
+              card.classList.remove("hidden");
+            } else {
+              card.classList.add("hidden");
+            }
+          });
+        });
+      });
+
+      // Form submissions
+      document
+        .getElementById("franchise-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert(
+            "Thank you for your franchise inquiry! We will contact you soon."
+          );
+          e.target.reset();
+        });
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", (e) => {
+          e.preventDefault();
+          alert("Thank you for your message! We will get back to you soon.");
+          e.target.reset();
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            mobileMenu.classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

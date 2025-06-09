@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods - Premium Ice Cream & Cafe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .hero-gradient {
+        background: linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("https://kigafoods.in/wp-content/uploads/2023/08/KIGA0856.png");
+        background-size: cover;
+        background-position: center;
+      }
+      .flavor-card:hover .flavor-overlay {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .flavor-overlay {
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      }
+      .newsletter-input:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px #f472b6;
+      }
+    </style>
+  </head>
+  <body class="font-sans antialiased text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center">
+          <img
+            src="https://kigafoods.in/wp-content/uploads/elementor/thumbs/ice-cream-scoop-3-qbfykscnwhq19j014i2klo65l23xfq9by2rrqoqfb4.png"
+            alt="Kiga Foods Logo"
+            class="h-12 w-auto"
+          />
+          <span class="ml-3 text-2xl font-bold text-pink-600">Kiga Foods</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#about" class="text-gray-700 hover:text-pink-600 transition"
+            >About</a
+          >
+          <a href="#menu" class="text-gray-700 hover:text-pink-600 transition"
+            >Menu</a
+          >
+          <a
+            href="#locations"
+            class="text-gray-700 hover:text-pink-600 transition"
+            >Locations</a
+          >
+          <a
+            href="#testimonials"
+            class="text-gray-700 hover:text-pink-600 transition"
+            >Reviews</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-pink-600 transition"
+            >Contact</a
+          >
+        </nav>
+        <button class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient min-h-screen flex items-center text-white">
+      <div class="container mx-auto px-4 py-20">
+        <div class="max-w-2xl">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+            Relax and take a moment to enjoy yourself
+          </h1>
+          <p class="text-xl md:text-2xl mb-8">
+            Indulge in a world of flavor and luxury at Pune's premier
+            destination for premium ice cream and cafe experiences.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="#menu"
+              class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-medium transition"
+              >View Menu</a
+            >
+            <a
+              href="#locations"
+              class="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-6 py-3 rounded-full font-medium transition"
+              >Our Locations</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Banner -->
+    <div class="bg-pink-100 py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-3xl font-bold text-pink-700">
+          10+ Years of Sweet Experience
+        </p>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Welcome to Kiga Foods
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Your Ultimate Destination for Exquisite Delights where exceptional
+            flavors and cherished moments converge.
+          </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+          <div class="lg:w-1/2">
+            <img
+              src="https://kigafoods.in/wp-content/uploads/elementor/thumbs/Group-16-1-qb0j42rsmxny7swjie1j8cwjc13bqnlpovv3u6n6z7k.png"
+              alt="Kiga Foods Interior"
+              class="rounded-xl shadow-xl w-full"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h3 class="text-2xl md:text-3xl font-bold mb-6 text-pink-600">
+              An Oasis of Comfort
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Kiga Foods isn't just a café – it's an experience. We take pride
+              in curating an environment where food enthusiasts, families,
+              friends, and individuals can gather and celebrate life's simple
+              pleasures.
+            </p>
+            <p class="text-gray-600 mb-6">
+              Step into the world of Kiga Foods, and you'll find yourself
+              enveloped in an ambiance that's both inviting and elegant. Our
+              café is designed to be your sanctuary – a place where you can
+              escape the hustle and bustle of the city.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center bg-pink-100 rounded-full px-4 py-2">
+                <i class="fas fa-ice-cream text-pink-600 mr-2"></i>
+                <span>Premium Ice Cream</span>
+              </div>
+              <div class="flex items-center bg-pink-100 rounded-full px-4 py-2">
+                <i class="fas fa-coffee text-pink-600 mr-2"></i>
+                <span>Specialty Cold Coffee</span>
+              </div>
+              <div class="flex items-center bg-pink-100 rounded-full px-4 py-2">
+                <i class="fas fa-pizza-slice text-pink-600 mr-2"></i>
+                <span>Delicious Snacks</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            A Symphony of Flavors
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our premium ice creams are hand-churned with the finest ingredients,
+            every scoop is an invitation to savor life's little luxuries.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Ice Cream Card -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg flavor-card relative"
+          >
+            <img
+              src="https://kigafoods.in/wp-content/uploads/elementor/thumbs/Group-4-1-qb0j47gzl3udtuppqy2o2tpuayg5t54ddj4j8kh0cg.png"
+              alt="Premium Ice Cream"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="p-6 flavor-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">Premium Ice Cream</h3>
+              <p>
+                From classic vanilla to exotic mango passionfruit, each flavor
+                carefully crafted to awaken your palate.
+              </p>
+              <div class="mt-4 text-pink-300">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Premium Ice Cream</h3>
+              <p class="text-gray-600">
+                From classic vanilla to exotic mango passionfruit
+              </p>
+            </div>
+          </div>
+
+          <!-- Cold Coffee Card -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg flavor-card relative"
+          >
+            <img
+              src="https://kigafoods.in/wp-content/uploads/elementor/thumbs/Group-3-1-qb0j4aai5ly8solmahajsb083429g8fkdx2zoectts.png"
+              alt="Cold Coffee"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="p-6 flavor-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">Cold Coffee Creations</h3>
+              <p>
+                Velvety-smooth classic cold brews and intricate fusion of
+                flavors crafted by our artisan baristas.
+              </p>
+              <div class="mt-4 text-pink-300">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Cold Coffee</h3>
+              <p class="text-gray-600">
+                Signature blends that invigorate your senses
+              </p>
+            </div>
+          </div>
+
+          <!-- Snacks Card -->
+          <div
+            class="bg-white rounded-xl overflow-hidden shadow-lg flavor-card relative"
+          >
+            <img
+              src="https://kigafoods.in/wp-content/uploads/2023/08/KIGA0829.png"
+              alt="Snacks"
+              class="w-full h-64 object-cover"
+            />
+            <div
+              class="p-6 flavor-overlay absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white text-center"
+            >
+              <h3 class="text-2xl font-bold mb-2">Snack Time Delights</h3>
+              <p>
+                From mouthwatering pizzas to crispy toasts, perfect
+                accompaniment for every visit.
+              </p>
+              <div class="mt-4 text-pink-300">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Savory Snacks</h3>
+              <p class="text-gray-600">
+                Complement your sweet treats with our delicious snacks
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div class="bg-white p-8 rounded-xl shadow-md text-center">
+            <div class="text-pink-600 text-4xl mb-4">
+              <i class="fas fa-ice-cream"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Delicious Taste</h3>
+            <p class="text-gray-600">
+              Kiga packs a burst of flavor in every velvety scoop, from classic
+              favorites to unique creations – pure indulgence in every bite!
+            </p>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md text-center">
+            <div class="text-pink-600 text-4xl mb-4">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Nutritional Value</h3>
+            <p class="text-gray-600">
+              Kiga delivers irresistible taste with quality ingredients you can
+              trust. Every scoop satisfies your cravings with wholesome
+              goodness!
+            </p>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md text-center">
+            <div class="text-pink-600 text-4xl mb-4">
+              <i class="fas fa-tags"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Affordable Luxury</h3>
+            <p class="text-gray-600">
+              Kiga offers a taste of luxury that doesn't break the bank. Indulge
+              in premium flavors at prices that feel just right!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Visit Our Stores</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Find your nearest Kiga Foods location and experience our exquisite
+            delights
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- SHIRUR -->
+          <div
+            class="bg-pink-50 rounded-xl p-6 shadow-md hover:shadow-xl transition"
+          >
+            <div class="text-pink-600 text-3xl mb-4">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">SHIRUR</h3>
+            <p class="text-gray-600 mb-4">Saradwadi, Tal, Shirur</p>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Mon - Fri: 09.00 - 18.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Saturday: 09.00 - 20.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Sunday: 09.00 - 17.00</span>
+              </div>
+            </div>
+            <button
+              class="mt-4 text-pink-600 hover:text-pink-800 font-medium flex items-center"
+            >
+              Get Directions <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- FC ROAD -->
+          <div
+            class="bg-pink-50 rounded-xl p-6 shadow-md hover:shadow-xl transition"
+          >
+            <div class="text-pink-600 text-3xl mb-4">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">FC ROAD</h3>
+            <p class="text-gray-600 mb-4">FC Road, Pune</p>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Mon - Fri: 09.00 - 18.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Saturday: 09.00 - 20.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Sunday: 09.00 - 17.00</span>
+              </div>
+            </div>
+            <button
+              class="mt-4 text-pink-600 hover:text-pink-800 font-medium flex items-center"
+            >
+              Get Directions <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- MANCHAR -->
+          <div
+            class="bg-pink-50 rounded-xl p-6 shadow-md hover:shadow-xl transition"
+          >
+            <div class="text-pink-600 text-3xl mb-4">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">MANCHAR</h3>
+            <p class="text-gray-600 mb-4">Manchar, Pune</p>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Mon - Fri: 09.00 - 18.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Saturday: 09.00 - 20.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Sunday: 09.00 - 17.00</span>
+              </div>
+            </div>
+            <button
+              class="mt-4 text-pink-600 hover:text-pink-800 font-medium flex items-center"
+            >
+              Get Directions <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+
+          <!-- ALANDI -->
+          <div
+            class="bg-pink-50 rounded-xl p-6 shadow-md hover:shadow-xl transition"
+          >
+            <div class="text-pink-600 text-3xl mb-4">
+              <i class="fas fa-store"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">ALANDI</h3>
+            <p class="text-gray-600 mb-4">Alandi, Pune</p>
+            <div class="space-y-2">
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Mon - Fri: 09.00 - 18.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Saturday: 09.00 - 20.00</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-pink-600 mr-2"></i>
+                <span>Sunday: 09.00 - 17.00</span>
+              </div>
+            </div>
+            <button
+              class="mt-4 text-pink-600 hover:text-pink-800 font-medium flex items-center"
+            >
+              Get Directions <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            What Our Customers Say
+          </h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            Experience the enchantment of Kiga Foods through the words of our
+            cherished customers
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md testimonial-card transition"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://kigafoods.in/wp-content/uploads/2023/08/placeholder-255.png"
+                alt="Amit Diwane"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Datta Chattar</h4>
+                <div class="flex text-pink-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Nice place for a stopover while traveling to Pune. Good choice of
+              icecreams.. Ice cream thalis and combos available. Limited choice
+              of snacks, but well prepared. Parking and washrooms are
+              available."
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md testimonial-card transition"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://kigafoods.in/wp-content/uploads/2023/08/placeholder-255.png"
+                alt="Avinash Vanjare"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">Avinash Vanjare</h4>
+                <div class="flex text-pink-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Amazing place for Icecreams lovers. They have many variety. Even
+              Icecreams thalis are available. Ambiance also nice. Icecreams test
+              is good. Other food also serve like pizza, burgers, sandwiches etc
+              Overall experience is good."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div
+            class="bg-white p-6 rounded-xl shadow-md testimonial-card transition"
+          >
+            <div class="flex items-center mb-4">
+              <img
+                src="https://kigafoods.in/wp-content/uploads/2023/08/placeholder-253.png"
+                alt="nishant damani"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-bold">nishant damani</h4>
+                <div class="flex text-pink-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Kiga ice cream is factory outlet, they serve different flavours
+              of icecream including classic and some Indian twist flavours like
+              puranpoli and Pani Puri flavour but I didn't taste it. The price
+              is quite high as you are factory outlet."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-pink-600 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-4">
+            Stay Updated with Our Sweet Offers
+          </h2>
+          <p class="text-xl mb-8">
+            Subscribe to our newsletter and be the first to know about new
+            flavors, special promotions, and exclusive events.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-3 rounded-full text-gray-800 newsletter-input"
+            />
+            <button
+              class="bg-white text-pink-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium transition"
+            >
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Need More Help?</h2>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+            We're here to answer any questions you may have about Kiga Foods
+          </p>
+        </div>
+
+        <div class="max-w-2xl mx-auto bg-gray-50 rounded-xl p-8 shadow-md">
+          <div class="text-center mb-8">
+            <div class="text-pink-600 text-4xl mb-4">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Contact Us</h3>
+            <a
+              href="tel:+919066549696"
+              class="text-xl font-medium text-pink-600 hover:text-pink-800"
+              >+91 -9066549696</a
+            >
+          </div>
+
+          <form class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="name" class="block text-gray-700 mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-600 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label for="email" class="block text-gray-700 mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-600 focus:border-transparent"
+                />
+              </div>
+            </div>
+            <div>
+              <label for="subject" class="block text-gray-700 mb-2"
+                >Subject</label
+              >
+              <input
+                type="text"
+                id="subject"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-600 focus:border-transparent"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-gray-700 mb-2"
+                >Your Message</label
+              >
+              <textarea
+                id="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-600 focus:border-transparent"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-medium transition w-full"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="https://kigafoods.in/wp-content/uploads/elementor/thumbs/ice-cream-scoop-3-qbfykscnwhq19j014i2klo65l23xfq9by2rrqoqfb4.png"
+                alt="Kiga Foods Logo"
+                class="h-10 w-auto"
+              />
+              <span class="ml-3 text-xl font-bold">Kiga Foods</span>
+            </div>
+            <p class="text-gray-400">
+              Pune's premier destination for premium ice cream and cafe
+              experiences.
+            </p>
+            <div class="flex space-x-4 mt-4">
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#menu"
+                  class="text-gray-400 hover:text-white transition"
+                  >Our Menu</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#locations"
+                  class="text-gray-400 hover:text-white transition"
+                  >Locations</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-gray-400 hover:text-white transition"
+                  >Reviews</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Contact Info</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-2 text-pink-500"></i>
+                <span>+91 -9066549696</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-2 text-pink-500"></i>
+                <span>info@kigafoods.in</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt mr-2 text-pink-500"></i>
+                <span>Pune, Maharashtra</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-bold mb-4">Opening Hours</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li class="flex justify-between">
+                <span>Monday - Friday</span>
+                <span>09:00 - 18:00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Saturday</span>
+                <span>09:00 - 20:00</span>
+              </li>
+              <li class="flex justify-between">
+                <span>Sunday</span>
+                <span>09:00 - 17:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400"
+        >
+          <p>&copy; 2023 Kiga Foods. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      onclick="topFunction()"
+      id="backToTop"
+      class="fixed bottom-8 right-8 bg-pink-600 text-white w-12 h-12 rounded-full shadow-lg hidden"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+      // Back to top button
+      window.onscroll = function () {
+        scrollFunction();
+      };
+
+      function scrollFunction() {
+        if (
+          document.body.scrollTop > 300 ||
+          document.documentElement.scrollTop > 300
+        ) {
+          document.getElementById("backToTop").style.display = "block";
+        } else {
+          document.getElementById("backToTop").style.display = "none";
+        }
+      }
+
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      // Mobile menu toggle functionality would go here
+    </script>
+  </body>
+</html>

@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods - Premium Indian Ice Creams</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --kiga-red: #c9312a;
+        --kiga-cream: #fcece9;
+        --kiga-brown: #6b4c3b;
+        --kiga-gold: #ffd700;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .playfair {
+        font-family: "Playfair Display", serif;
+      }
+
+      .kiga-red {
+        color: var(--kiga-red);
+      }
+
+      .bg-kiga-red {
+        background-color: var(--kiga-red);
+      }
+
+      .bg-kiga-cream {
+        background-color: var(--kiga-cream);
+      }
+
+      .text-kiga-brown {
+        color: var(--kiga-brown);
+      }
+
+      .bg-kiga-gold {
+        background-color: var(--kiga-gold);
+      }
+
+      .border-kiga-gold {
+        border-color: var(--kiga-gold);
+      }
+
+      .top-bar {
+        background: linear-gradient(to right, var(--kiga-red), #a52822);
+        color: white;
+      }
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .hero-slide {
+        height: 80vh;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .flavor-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .flavor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .flavor-img {
+        height: 200px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .franchise-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .testimonial-card {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .footer {
+        background: linear-gradient(to right, #222, #111);
+      }
+
+      .footer-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--kiga-red);
+      }
+
+      .mobile-menu {
+        background-color: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 30px;
+        right: 30px;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919066549696" class="whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Top Bar -->
+    <div class="top-bar py-2 hidden md:block">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center space-x-6">
+          <div class="flex items-center">
+            <i class="fas fa-phone-alt mr-2"></i>
+            <span>+91 9066549696</span>
+          </div>
+          <div class="flex items-center">
+            <i class="fas fa-envelope mr-2"></i>
+            <span>hello@kigafoods.com</span>
+          </div>
+        </div>
+        <div class="flex space-x-4">
+          <a href="#" class="text-white hover:text-gray-200"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a href="#" class="text-white hover:text-gray-200"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="#" class="text-white hover:text-gray-200"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="#" class="text-white hover:text-gray-200"
+            ><i class="fab fa-youtube"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar sticky top-0 z-50 py-4">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <div class="flex items-center">
+            <img src="./KigaLogo.png" alt="Kiga Foods Logo" class="h-14" />
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >Our Flavors</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >Franchise</a
+          >
+          <a
+            href="#stores"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >Our Stores</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-gray-800 hover:text-kiga-red transition"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menu-toggle" class="text-gray-800">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="mobile-menu hidden md:hidden absolute top-full left-0 w-full py-4 px-4"
+      >
+        <div class="flex flex-col space-y-4">
+          <a
+            href="#"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >Our Flavors</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >Franchise</a
+          >
+          <a
+            href="#stores"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >Our Stores</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-gray-800 hover:text-kiga-red transition py-2 border-b"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Carousel -->
+    <div class="relative">
+      <!-- Slide 1 -->
+      <div
+        class="hero-slide flex items-center"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1444&q=80');
+        "
+      >
+        <div class="absolute inset-0 bg-black bg-opacity-30"></div>
+        <div
+          class="container mx-auto px-4 relative z-10 text-center text-white"
+        >
+          <h2 class="text-4xl md:text-6xl font-bold playfair mb-6">
+            Authentic Indian Ice Creams
+          </h2>
+          <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-8">
+            Made with traditional recipes and the finest natural ingredients
+          </p>
+          <a
+            href="#flavors"
+            class="inline-block px-8 py-3 bg-kiga-red text-white font-bold rounded-full hover:bg-opacity-90 transition"
+            >Explore Our Flavors</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-bold playfair text-kiga-brown mb-4"
+          >
+            Our <span class="kiga-red">Story</span>
+          </h2>
+          <div class="w-20 h-1 bg-kiga-red mx-auto mb-6"></div>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Kiga Foods brings you the authentic taste of Indian traditional ice
+            creams, crafted with passion and premium ingredients.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row items-center gap-10">
+          <div class="md:w-1/2">
+            <div class="grid grid-cols-2 gap-4">
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64"
+              ></div>
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80 mt-8"
+              ></div>
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-80"
+              ></div>
+              <div
+                class="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 mt-8"
+              ></div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-bold playfair text-kiga-brown mb-4">
+              Tradition Meets Innovation
+            </h3>
+            <p class="text-gray-700 mb-4">
+              Founded in 2010, Kiga Foods began with a simple mission: to bring
+              authentic Indian ice cream flavors to every household while
+              preserving traditional recipes passed down through generations.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Today, we combine time-honored techniques with modern technology
+              to create premium ice creams that capture the essence of Indian
+              culinary heritage.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mb-8">
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-kiga-cream flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-leaf text-kiga-red"></i>
+                </div>
+                <span class="font-medium">Natural Ingredients</span>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-kiga-cream flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-heart text-kiga-red"></i>
+                </div>
+                <span class="font-medium">Handcrafted</span>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 rounded-full bg-kiga-cream flex items-center justify-center mr-3"
+                >
+                  <i class="fas fa-cow text-kiga-red"></i>
+                </div>
+                <span class="font-medium">Fresh Dairy</span>
+              </div>
+            </div>
+
+            <div class="flex space-x-4">
+              <a
+                href="#about"
+                class="px-6 py-2 bg-kiga-red text-white rounded-full font-medium hover:bg-opacity-90"
+                >Learn More</a
+              >
+              <a
+                href="#contact"
+                class="px-6 py-2 border border-kiga-red text-kiga-red rounded-full font-medium hover:bg-kiga-red hover:text-white"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flavors Section -->
+    <section id="flavors" class="py-16 bg-kiga-cream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-bold playfair text-kiga-brown mb-4"
+          >
+            Our <span class="kiga-red">Premium</span> Flavors
+          </h2>
+          <div class="w-20 h-1 bg-kiga-red mx-auto mb-6"></div>
+          <p class="text-gray-700 max-w-3xl mx-auto">
+            Discover our range of traditional and innovative flavors crafted
+            with natural ingredients.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Flavor 1 -->
+          <div class="flavor-card bg-white">
+            <div class="flavor-img bg-gray-200 border-2 border-dashed"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold playfair text-kiga-brown mb-2">
+                Kesar Pista
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Rich saffron and crunchy pistachios in a creamy milk base.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-bold kiga-red">₹99</span>
+                <button
+                  class="px-4 py-2 bg-kiga-red text-white rounded-full text-sm hover:bg-opacity-90"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flavor 2 -->
+          <div class="flavor-card bg-white">
+            <div class="flavor-img bg-gray-200 border-2 border-dashed"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold playfair text-kiga-brown mb-2">
+                Mango Mastani
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Seasonal Alphonso mangoes blended into creamy perfection.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-bold kiga-red">₹109</span>
+                <button
+                  class="px-4 py-2 bg-kiga-red text-white rounded-full text-sm hover:bg-opacity-90"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flavor 3 -->
+          <div class="flavor-card bg-white">
+            <div class="flavor-img bg-gray-200 border-2 border-dashed"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold playfair text-kiga-brown mb-2">
+                Malai Kulfi
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Traditional Indian kulfi with cardamom and saffron notes.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-bold kiga-red">₹89</span>
+                <button
+                  class="px-4 py-2 bg-kiga-red text-white rounded-full text-sm hover:bg-opacity-90"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flavor 4 -->
+          <div class="flavor-card bg-white">
+            <div class="flavor-img bg-gray-200 border-2 border-dashed"></div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold playfair text-kiga-brown mb-2">
+                Rose Badam
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Delicate rose flavor with crunchy almond pieces.
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-lg font-bold kiga-red">₹99</span>
+                <button
+                  class="px-4 py-2 bg-kiga-red text-white rounded-full text-sm hover:bg-opacity-90"
+                >
+                  Order Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="inline-block px-8 py-3 bg-kiga-red text-white font-bold rounded-full hover:bg-opacity-90 transition"
+            >View All Flavors</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Franchise Section -->
+    <section id="franchise" class="franchise-section py-20 text-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold playfair mb-6">
+            Join the Kiga Family
+          </h2>
+          <div class="w-20 h-1 bg-kiga-gold mx-auto mb-8"></div>
+          <p class="text-xl mb-8 max-w-2xl mx-auto">
+            Become a part of our growing franchise network and bring authentic
+            Indian ice cream to your community.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+              <div
+                class="w-16 h-16 rounded-full bg-kiga-gold flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-chart-line text-kiga-brown text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-2">Proven Business Model</h3>
+              <p>Established brand with successful outlets across India</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+              <div
+                class="w-16 h-16 rounded-full bg-kiga-gold flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-graduation-cap text-kiga-brown text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-2">Comprehensive Training</h3>
+              <p>Full support and training for franchise partners</p>
+            </div>
+
+            <div class="bg-white bg-opacity-10 p-6 rounded-lg backdrop-blur-sm">
+              <div
+                class="w-16 h-16 rounded-full bg-kiga-gold flex items-center justify-center mx-auto mb-4"
+              >
+                <i class="fas fa-tools text-kiga-brown text-2xl"></i>
+              </div>
+              <h3 class="font-bold text-xl mb-2">Operational Support</h3>
+              <p>Ongoing assistance for smooth operations</p>
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="inline-block px-8 py-3 bg-kiga-gold text-kiga-brown font-bold rounded-full hover:bg-opacity-90 transition"
+            >Apply for Franchise</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-bold playfair text-kiga-brown mb-4"
+          >
+            What Our <span class="kiga-red">Customers</span> Say
+          </h2>
+          <div class="w-20 h-1 bg-kiga-red mx-auto mb-6"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 border-2 border-dashed mr-4"
+              ></div>
+              <div>
+                <h4 class="font-bold">Rajesh Mehta</h4>
+                <div class="flex text-kiga-gold">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "Kiga's Kesar Pista took me back to my childhood in Delhi. The
+              authentic flavors and creamy texture are unmatched!"
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 border-2 border-dashed mr-4"
+              ></div>
+              <div>
+                <h4 class="font-bold">Priya Sharma</h4>
+                <div class="flex text-kiga-gold">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "The Mango Mastani is simply divine! Tastes just like my
+              grandmother used to make during summer vacations."
+            </p>
+          </div>
+
+          <div class="testimonial-card p-6">
+            <div class="flex items-center mb-4">
+              <div
+                class="w-12 h-12 rounded-full bg-gray-200 border-2 border-dashed mr-4"
+              ></div>
+              <div>
+                <h4 class="font-bold">Amit Patel</h4>
+                <div class="flex text-kiga-gold">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-700 italic">
+              "As a franchisee, I've received tremendous support from Kiga
+              Foods. Their business model is solid and the products sell
+              themselves!"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          <div>
+            <h3 class="footer-title text-xl font-bold playfair">About Kiga</h3>
+            <p class="mb-4 text-gray-400">
+              Bringing authentic Indian ice cream traditions to your
+              neighborhood since 2010.
+            </p>
+            <div class="flex space-x-4">
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="text-gray-400 hover:text-white"
+                ><i class="fab fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="footer-title text-xl font-bold playfair">Quick Links</h3>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray-400 hover:text-white">Home</a>
+              </li>
+              <li>
+                <a href="#about" class="text-gray-400 hover:text-white"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#flavors" class="text-gray-400 hover:text-white"
+                  >Our Flavors</a
+                >
+              </li>
+              <li>
+                <a href="#franchise" class="text-gray-400 hover:text-white"
+                  >Franchise</a
+                >
+              </li>
+              <li>
+                <a href="#stores" class="text-gray-400 hover:text-white"
+                  >Our Stores</a
+                >
+              </li>
+              <li>
+                <a href="#contact" class="text-gray-400 hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title text-xl font-bold playfair">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-kiga-red"></i>
+                <span class="text-gray-400"
+                  >Pimple Gurav, Pune, Maharashtra</span
+                >
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-phone mt-1 mr-3 text-kiga-red"></i>
+                <span class="text-gray-400">+91-9066549696</span>
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-envelope mt-1 mr-3 text-kiga-red"></i>
+                <span class="text-gray-400">hello@kigafoods.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title text-xl font-bold playfair">Newsletter</h3>
+            <p class="text-gray-400 mb-4">
+              Subscribe for updates and special offers!
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  class="px-4 py-2 rounded-l-lg w-full focus:outline-none text-gray-800"
+                />
+                <button class="bg-kiga-red px-4 py-2 rounded-r-lg">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+            <p class="text-gray-400 text-sm">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 pt-6 text-center text-gray-500">
+          <p>
+            &copy; 2023 Kiga Foods. All rights reserved. | Designed with
+            <i class="fas fa-heart text-kiga-red"></i>
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("hidden");
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 100,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            document.getElementById("mobile-menu").classList.add("hidden");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
