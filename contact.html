@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods | Contact Us</title>
+    <meta
+      name="description"
+      content="Get in touch with Kiga Foods. Contact us for inquiries, feedback, or support."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              kigaCyan: "#20d1da",
+              kigaCyanDark: "#18a1aa",
+              kigaCream: "#E9E8FC",
+              kigaBrown: "#6B4C3B",
+              kigaGold: "#FFD700",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Poppins"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body class="font-body text-kigaBrown">
+    <!-- Navigation Bar (Identical to index.html for consistency) -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img
+            id="nav-logo"
+            src="./logo file-03.webp"
+            alt="Kiga Foods Logo"
+            class="h-24 transition-all duration-300"
+          />
+        </div>
+
+        <div
+          id="desktop-menu-links"
+          class="hidden md:flex space-x-8 text-white"
+        >
+          <a
+            href="index.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="locations.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="franchise.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute w-full left-0 right-0 shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact Us Section -->
+    <section class="py-24 bg-white mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Get In Touch
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Have questions or feedback? We'd love to hear from you!
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <!-- Contact Information -->
+          <div class="bg-kigaCream p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-display font-semibold text-kigaBrown mb-6">
+              Contact Information
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-map-marker-alt text-kigaCyan text-xl mt-1"></i>
+                <div>
+                  <p class="font-semibold">Address:</p>
+                  <p>Kiga Foods Headquarters, 123 Ice Cream Lane,</p>
+                  <p>Flavor City, FC 45678, India</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-phone-alt text-kigaCyan text-xl mt-1"></i>
+                <div>
+                  <p class="font-semibold">Phone:</p>
+                  <p>+91 98765 43210</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-envelope text-kigaCyan text-xl mt-1"></i>
+                <div>
+                  <p class="font-semibold">Email:</p>
+                  <p>info@kigafoods.com</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-4">
+                <i class="fas fa-clock text-kigaCyan text-xl mt-1"></i>
+                <div>
+                  <p class="font-semibold">Business Hours:</p>
+                  <p>Mon - Sat: 9:00 AM - 6:00 PM (IST)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="bg-kigaCream p-8 rounded-lg shadow-md">
+            <h3 class="text-2xl font-display font-semibold text-kigaBrown mb-6">
+              Send Us a Message
+            </h3>
+            <form action="#" method="POST">
+              <div class="mb-5">
+                <label
+                  for="contact-name"
+                  class="block text-kigaBrown text-sm font-semibold mb-2"
+                  >Your Name</label
+                >
+                <input
+                  type="text"
+                  id="contact-name"
+                  name="contact-name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                  placeholder="Your Full Name"
+                  required
+                />
+              </div>
+              <div class="mb-5">
+                <label
+                  for="contact-email"
+                  class="block text-kigaBrown text-sm font-semibold mb-2"
+                  >Your Email</label
+                >
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contact-email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                  placeholder="your.email@example.com"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  for="contact-message"
+                  class="block text-kigaBrown text-sm font-semibold mb-2"
+                  >Your Message</label
+                >
+                <textarea
+                  id="contact-message"
+                  name="contact-message"
+                  rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan resize-y"
+                  placeholder="Enter your message here..."
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-kigaCyan hover:bg-kigaCyanDark text-white font-bold py-3 px-8 rounded-full transition duration-300 focus:outline-none focus:ring-2 focus:ring-kigaCyan focus:ring-offset-2"
+                >
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for Navbar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.getElementById("main-nav");
+        const logo = document.getElementById("nav-logo");
+        const desktopLinks = document.getElementById("desktop-menu-links");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const scrollThreshold = 50; // Pixels to scroll before changing navbar
+
+        const handleScroll = () => {
+          if (window.scrollY > scrollThreshold) {
+            nav.classList.add("bg-white", "shadow-md", "py-2");
+            nav.classList.remove("py-6");
+            logo.classList.add("h-16");
+            logo.classList.remove("h-24");
+            desktopLinks.classList.remove("text-white");
+            desktopLinks.classList.add("text-kigaBrown");
+            mobileMenuButton.classList.remove("text-white");
+            mobileMenuButton.classList.add("text-kigaCyan");
+          } else {
+            nav.classList.remove("bg-white", "shadow-md", "py-2");
+            nav.classList.add("py-6");
+            logo.classList.remove("h-16");
+            logo.classList.add("h-24");
+            desktopLinks.classList.add("text-white");
+            desktopLinks.classList.remove("text-kigaBrown");
+            mobileMenuButton.classList.add("text-white");
+            mobileMenuButton.classList.remove("text-kigaCyan");
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

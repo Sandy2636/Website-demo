@@ -18,8 +18,8 @@
         theme: {
           extend: {
             colors: {
-              kigaRed: "#C9312A",
-              kigaCream: "#FCECE9",
+              kigaRed: "#20d1da",
+              kigaCream: "#E9E8FC",
               kigaBrown: "#6B4C3B",
               kigaGold: "#FFD700",
             },
@@ -68,21 +68,13 @@
     </style>
   </head>
   <body class="font-body bg-kigaCream text-kigaBrown">
-    <!-- WhatsApp Float -->
-    <a
-      href="https://wa.me/919066549696"
-      class="fixed bottom-8 right-8 z-50 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-green-600 transition-all duration-300 animate-bounce"
-    >
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-40">
       <div
         class="container mx-auto px-4 py-3 flex justify-between items-center"
       >
         <div class="flex items-center">
-          <img src="./KigaLogo.png" alt="Kiga Foods Logo" class="h-14" />
+          <img src="./kigaLogo.png" alt="Kiga Foods Logo" class="h-20" />
         </div>
 
         <!-- Desktop Menu -->
@@ -284,119 +276,157 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
-            Our Story
-          </h2>
-          <div class="w-24 h-1 bg-kigaRed mx-auto"></div>
-        </div>
+    <!-- Category Showcase Inspired by Fruity Design -->
+    <section class="py-16 bg-[#fff6f4] text-center">
+      <!-- Header -->
+      <h2 class="text-3xl md:text-4xl font-bold text-[#5a2e1e] mb-2">
+        Flavors to Fall in Love With
+      </h2>
+      <p class="text-gray-600 text-base md:text-lg mb-12">
+        A scoop for every craving – handcrafted & unforgettable.
+      </p>
 
-        <div class="flex flex-col md:flex-row gap-12 items-center">
-          <div class="md:w-1/2">
+      <!-- Category Circles Grid -->
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-6xl mx-auto px-4"
+      >
+        <!-- Popsicool -->
+        <!-- <a href="/category/popsicool" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 rounded-full bg-[#6e0b23] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
             <img
-              src="Screenshot 2025-06-05 000859.png"
-              alt="Kiga Foods Ice Cream"
-              class="w-full h-auto rounded-lg shadow-lg"
+              src="your-popsicle-image.png"
+              alt="Popsicool"
+              class="h-20 object-contain"
             />
           </div>
-          <div class="md:w-1/2">
-            <h3 class="text-2xl font-display font-semibold mb-4 text-kigaRed">
-              From Tradition to Innovation
-            </h3>
-            <p class="mb-6">
-              Kiga Foods was born from a passion to bring authentic Indian
-              flavors to the world of premium ice cream. Our founders, Kiran
-              Suresh Salunke and Ganesh Rajendra Gosavi, combined their
-              expertise in dairy technology and traditional Indian recipes to
-              create something truly special.
-            </p>
-            <p class="mb-6">
-              We use only the finest ingredients, from Alphonso mangoes to real
-              Kashmiri saffron, ensuring each scoop delivers an unforgettable
-              taste experience.
-            </p>
-            <div class="flex flex-wrap gap-4">
-              <div class="flex items-center space-x-3">
-                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
-                  <i class="fas fa-leaf text-xl"></i>
-                </div>
-                <span>Premium Ingredients</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
-                  <i class="fas fa-heart text-xl"></i>
-                </div>
-                <span>Authentic Recipes</span>
-              </div>
-              <div class="flex items-center space-x-3">
-                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
-                  <i class="fas fa-star text-xl"></i>
-                </div>
-                <span>Premium Quality</span>
-              </div>
-            </div>
+          <span class="font-semibold text-[#333]">Cat - 1 </span>
+        </a> -->
+
+        <!-- Fruitylicious -->
+        <a
+          href="/category/fruitylicious"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 rounded-full bg-[#7cc768] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-fruity-image.png"
+              alt="Fruitylicious"
+              class="h-20 object-contain"
+            />
           </div>
-        </div>
+          <span class="font-semibold text-[#333]"> Fruitylicious </span>
+        </a>
 
-        <!-- Our Team -->
-        <div class="mt-16">
-          <h3 class="text-3xl font-display font-semibold mb-8 text-center">
-            Meet Our Founders
-          </h3>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <div
-              class="bg-kigaCream p-6 rounded-lg flex flex-col md:flex-row items-center gap-6"
-            >
-              <div class="w-32 h-32 rounded-full overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80"
-                  alt="Kiran Suresh Salunke"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 class="text-xl font-display font-medium">
-                  Kiran Suresh Salunke
-                </h4>
-                <p class="text-sm text-kigaRed mb-2">
-                  Co-Founder & Dairy Technologist
-                </p>
-                <p class="text-sm">
-                  With over 15 years in dairy technology, Kiran brings
-                  innovation and quality assurance to every Kiga product.
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="bg-kigaCream p-6 rounded-lg flex flex-col md:flex-row items-center gap-6"
-            >
-              <div class="w-32 h-32 rounded-full overflow-hidden shadow-md">
-                <img
-                  src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
-                  alt="Ganesh Rajendra Gosavi"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 class="text-xl font-display font-medium">
-                  Ganesh Rajendra Gosavi
-                </h4>
-                <p class="text-sm text-kigaRed mb-2">
-                  Co-Founder & Flavor Expert
-                </p>
-                <p class="text-sm">
-                  Ganesh's expertise in traditional Indian flavors and culinary
-                  arts forms the heart of Kiga's unique taste profile.
-                </p>
-              </div>
-            </div>
+        <!-- Nuttylicious -->
+        <!-- <a
+          href="/category/nuttylicious"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 rounded-full bg-[#9a50b3] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-nutty-image.png"
+              alt="Nuttylicious"
+              class="h-20 object-contain"
+            />
           </div>
-        </div>
+          <span class="font-semibold text-[#333]">Cat - 3 </span>
+        </a> -->
+
+        <!-- Chocolicious -->
+        <a
+          href="/category/chocolicious"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 rounded-full bg-[#94d3dc] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-choco-image.png"
+              alt="Chocolicious"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Chocolicious </span>
+        </a>
+
+        <!-- MilkShakes -->
+        <a
+          href="/category/chocolicious"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 rounded-full bg-[#94d3dc] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-choco-image.png"
+              alt="Chocolicious"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Milk Shakes </span>
+        </a>
+
+        <!-- Vegan -->
+        <!-- <a href="/category/vegan" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 rounded-full bg-[#4ac1f7] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-vegan-image.png"
+              alt="Vegan"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Cat - 5</span>
+        </a> -->
+
+        <!-- Seasonal -->
+        <a href="/category/seasonal" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 rounded-full bg-[#fbd1d1] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-seasonal-image.png"
+              alt="Seasonal"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Seasonal </span>
+        </a>
+
+        <!-- Festive -->
+        <a href="/category/festive" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 rounded-full bg-[#c3b5ec] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-festive-image.png"
+              alt="Festive"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Festive </span>
+        </a>
+
+        <!-- Zero Sugar -->
+        <a href="/category/zero-sugar" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 rounded-full bg-[#d2c35e] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="your-zero-sugar-image.png"
+              alt="Zero Sugar"
+              class="h-20 object-contain"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Zero Sugar </span>
+        </a>
       </div>
     </section>
 
@@ -470,11 +500,10 @@
                   flavors of India.
                 </p>
                 <div class="flex justify-between items-center">
-                  <span class="font-medium text-kigaRed">₹250 - ₹450</span>
                   <button
-                    class="bg-kigaRed text-white px-4 py-1 rounded-full text-sm hover:bg-red-800 transition-colors"
+                    class="bg-kigaRed text-white px-4 py-1 rounded-md text-sm hover:bg-red-800 transition-colors"
                   >
-                    Add to Cart
+                    Read More
                   </button>
                 </div>
               </div>
@@ -504,11 +533,10 @@
                   summer refreshment.
                 </p>
                 <div class="flex justify-between items-center">
-                  <span class="font-medium text-kigaRed">₹280 - ₹500</span>
                   <button
-                    class="bg-kigaRed text-white px-4 py-1 rounded-full text-sm hover:bg-red-800 transition-colors"
+                    class="bg-kigaRed text-white px-4 py-1 rounded-md text-sm hover:bg-red-800 transition-colors"
                   >
-                    Add to Cart
+                    Read More
                   </button>
                 </div>
               </div>
@@ -536,11 +564,10 @@
                   summer refreshment.
                 </p>
                 <div class="flex justify-between items-center">
-                  <span class="font-medium text-kigaRed">₹280 - ₹500</span>
                   <button
-                    class="bg-kigaRed text-white px-4 py-1 rounded-full text-sm hover:bg-red-800 transition-colors"
+                    class="bg-kigaRed text-white px-4 py-1 rounded-md text-sm hover:bg-red-800 transition-colors"
                   >
-                    Add to Cart
+                    Read More
                   </button>
                 </div>
               </div>
@@ -566,11 +593,10 @@
                   luxurious treat.
                 </p>
                 <div class="flex justify-between items-center">
-                  <span class="font-medium text-kigaRed">₹300 - ₹520</span>
                   <button
-                    class="bg-kigaRed text-white px-4 py-1 rounded-full text-sm hover:bg-red-800 transition-colors"
+                    class="bg-kigaRed text-white px-4 py-1 rounded-md text-sm hover:bg-red-800 transition-colors"
                   >
-                    Add to Cart
+                    Read More
                   </button>
                 </div>
               </div>
@@ -598,11 +624,10 @@
                   one magical scoop.
                 </p>
                 <div class="flex justify-between items-center">
-                  <span class="font-medium text-kigaRed">₹270 - ₹480</span>
                   <button
-                    class="bg-kigaRed text-white px-4 py-1 rounded-full text-sm hover:bg-red-800 transition-colors"
+                    class="bg-kigaRed text-white px-4 py-1 rounded-md text-sm hover:bg-red-800 transition-colors"
                   >
-                    Add to Cart
+                    Read More
                   </button>
                 </div>
               </div>
@@ -617,48 +642,62 @@
             >View Full Menu</a
           >
         </div>
+      </div>
+    </section>
 
-        <!-- Special Offers -->
-        <div class="mt-16 bg-white p-8 rounded-xl shadow-sm">
-          <h3 class="text-2xl font-display font-semibold mb-6 text-center">
-            Special Offers
-          </h3>
-          <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-kigaCream p-6 rounded-lg text-center">
-              <div
-                class="bg-kigaRed text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl"
-              >
-                <i class="fas fa-gift"></i>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Our Story
+          </h2>
+          <div class="w-24 h-1 bg-kigaRed mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2">
+            <img
+              src="Screenshot 2025-06-05 000859.png"
+              alt="Kiga Foods Ice Cream"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-display font-semibold mb-4 text-kigaRed">
+              From Tradition to Innovation
+            </h3>
+            <p class="mb-6">
+              Kiga Foods was born from a passion to bring authentic Indian
+              flavors to the world of premium ice cream. Our founders, Kiran
+              Suresh Salunke and Ganesh Rajendra Gosavi, combined their
+              expertise in dairy technology and traditional Indian recipes to
+              create something truly special.
+            </p>
+            <p class="mb-6">
+              We use only the finest ingredients, from Alphonso mangoes to real
+              Kashmiri saffron, ensuring each scoop delivers an unforgettable
+              taste experience.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
+                  <i class="fas fa-leaf text-xl"></i>
+                </div>
+                <span>Premium Ingredients</span>
               </div>
-              <h4 class="font-display font-medium mb-2">Family Pack</h4>
-              <p class="text-sm mb-2">
-                Get 15% off on all family packs (1kg and above)
-              </p>
-              <span class="text-xs text-kigaRed">Use code: KIGAFAMILY</span>
-            </div>
-            <div class="bg-kigaCream p-6 rounded-lg text-center">
-              <div
-                class="bg-kigaRed text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl"
-              >
-                <i class="fas fa-calendar-alt"></i>
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
+                  <i class="fas fa-heart text-xl"></i>
+                </div>
+                <span>Authentic Recipes</span>
               </div>
-              <h4 class="font-display font-medium mb-2">Subscribe & Save</h4>
-              <p class="text-sm mb-2">
-                Monthly subscription with free delivery and 10% discount
-              </p>
-              <span class="text-xs text-kigaRed">Cancel anytime</span>
-            </div>
-            <div class="bg-kigaCream p-6 rounded-lg text-center">
-              <div
-                class="bg-kigaRed text-white rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-2xl"
-              >
-                <i class="fas fa-user-friends"></i>
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaRed rounded-full p-2">
+                  <i class="fas fa-star text-xl"></i>
+                </div>
+                <span>Premium Quality</span>
               </div>
-              <h4 class="font-display font-medium mb-2">Refer a Friend</h4>
-              <p class="text-sm mb-2">
-                Get ₹200 off when your friend makes their first purchase
-              </p>
-              <span class="text-xs text-kigaRed">Terms apply</span>
             </div>
           </div>
         </div>
@@ -666,7 +705,7 @@
     </section>
 
     <!-- Franchise Section -->
-    <section id="franchise" class="py-16 bg-white">
+    <!-- <section id="franchise" class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
@@ -876,6 +915,44 @@
                 </div>
               </form>
             </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section class="py-16 bg-white">
+      <div
+        class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-center gap-12 text-center md:text-left"
+      >
+        <!-- Left: Text Content -->
+        <div class="md:w-1/2">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold leading-tight mb-4"
+          >
+            <span class="text-kigaRed">Franchisee</span> Happiness Together
+          </h2>
+          <p class="text-gray-700 mb-6 text-lg max-w-md mx-auto md:mx-0">
+            Our brand isn’t just about serving ice creams — it creates happiness
+            and unforgettable memories! This is your chance to be part of an
+            iconic business where passion meets profitability.
+          </p>
+          <a
+            href="/franchise-form"
+            class="inline-block bg-kigaRed hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
+          >
+            Apply Now
+          </a>
+        </div>
+
+        <!-- Right: Circle Image -->
+        <div class="md:w-1/2 flex justify-center">
+          <div
+            class="w-[280px] h-[280px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-white shadow-lg"
+          >
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Franchise Meeting"
+              class="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods | Franchise Opportunities</title>
+    <meta
+      name="description"
+      content="Explore comprehensive franchise opportunities with Kiga Foods and join our thriving family. Learn about our journey, support system, and apply now."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              kigaCyan: "#20d1da",
+              kigaCyanDark: "#18a1aa",
+              kigaCream: "#E9E8FC",
+              kigaBrown: "#6B4C3B",
+              kigaGold: "#FFD700",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Poppins"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      /* Custom styles for journey timeline */
+      .journey-item {
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 2rem;
+      }
+      .journey-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #20d1da; /* kigaCyan */
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .journey-item::after {
+        content: "";
+        position: absolute;
+        left: 0.7rem;
+        top: 0;
+        height: 100%;
+        width: 2px;
+        background-color: #e2e8f0; /* gray-200 */
+      }
+      .journey-item:last-child::after {
+        display: none; /* Hide line for the last item */
+      }
+      .usp-icon {
+        color: #20d1da; /* kigaCyan */
+      }
+    </style>
+  </head>
+  <body class="font-body text-kigaBrown">
+    <!-- Navigation Bar -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img
+            id="nav-logo"
+            src="./logo file-03.webp"
+            alt="Kiga Foods Logo"
+            class="h-24 transition-all duration-300"
+          />
+        </div>
+
+        <div
+          id="desktop-menu-links"
+          class="hidden md:flex space-x-8 text-white"
+        >
+          <a
+            href="index.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="locations.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="franchise.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute w-full left-0 right-0 shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+    <!-- Franchise Hero Section -->
+    <section class="py-24 bg-white mt-16">
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-12 text-center md:text-left"
+      >
+        <!-- Left: Text Content -->
+        <div class="md:w-1/2">
+          <h1
+            class="text-4xl md:text-5xl font-display font-bold leading-tight mb-4"
+          >
+            <span class="text-kigaCyan">Partner</span> with the Kiga Family!
+          </h1>
+          <p class="text-gray-700 mb-6 text-lg max-w-md mx-auto md:mx-0">
+            Our brand isn’t just about serving delicious ice creams — it's about
+            creating happiness and unforgettable memories. This is your chance
+            to be part of an iconic business where passion meets profitability,
+            backed by a trusted name in Indian desserts.
+          </p>
+          <a
+            href="#franchise-form"
+            class="inline-block bg-kigaCyan hover:bg-kigaCyanDark text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
+          >
+            Apply for Franchise
+          </a>
+        </div>
+
+        <!-- Right: Circle Image -->
+        <div class="md:w-1/2 flex justify-center">
+          <div
+            class="w-[280px] h-[280px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-white shadow-lg"
+          >
+            <img
+              src="https://placehold.co/360x360/e0b0ff/000000?text=Franchise+Growth"
+              alt="Franchise Opportunity"
+              class="w-full h-full object-cover"
+              onerror="this.onerror=null;this.src='https://placehold.co/360x360/e0b0ff/000000?text=Franchise+Growth';"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comprehensive Franchise Support System Section -->
+    <section class="py-20 bg-kigaCream">
+      <div class="container mx-auto px-4">
+        <!-- Heading Section -->
+        <div class="text-center mb-16">
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold text-kigaBrown mb-4"
+          >
+            Comprehensive Franchise Support System
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600 text-base md:text-lg">
+            We empower our partners with everything needed for sweet success.
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Feature Item -->
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-handshake text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Pre-Opening Support
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Assistance with site selection, store layout design, and initial
+                setup.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-users text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Extensive Training Programs
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Thorough training for you and your staff on operations, product,
+                and customer service.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-bullhorn text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Marketing & Branding
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Access to strong branding, marketing materials, and promotional
+                campaigns.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-chart-line text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Operational & Management Support
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Ongoing guidance for day-to-day operations and business
+                management.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-boxes text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Supply Chain & Logistics
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Reliable supply of high-quality ingredients and finished
+                products.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex items-start p-6 bg-white rounded-xl shadow hover:shadow-md transition-shadow duration-300"
+          >
+            <i class="fas fa-headset text-4xl text-kigaBrown mr-5 mt-1"></i>
+            <div>
+              <h3 class="text-xl font-semibold text-kigaBrown mb-2">
+                Dedicated Relationship Manager
+              </h3>
+              <p class="text-gray-700 text-sm leading-relaxed">
+                Personalized support and guidance from an assigned manager.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Designed for Impact (Gallery) Section -->
+    <section class="py-16 bg-[#fff6f4]">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Designed for Impact
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Modern aesthetics with inviting ambiance for a delightful customer
+            experience.
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <img
+            src="https://placehold.co/400x300/a8dadc/000000?text=Store+Interior+1"
+            alt="Store Interior Design 1"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/a8dadc/000000?text=Store+Interior+1';"
+          />
+          <img
+            src="https://placehold.co/400x300/e0b0ff/000000?text=Store+Exterior"
+            alt="Store Exterior Design"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0b0ff/000000?text=Store+Exterior';"
+          />
+          <img
+            src="https://placehold.co/400x300/a1e0a1/000000?text=Serving+Area"
+            alt="Serving Area"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/a1e0a1/000000?text=Serving+Area';"
+          />
+          <img
+            src="https://placehold.co/400x300/f8d8c2/000000?text=Seating+Area"
+            alt="Seating Area"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/f8d8c2/000000?text=Seating+Area';"
+          />
+          <img
+            src="https://placehold.co/400x300/c2f8f8/000000?text=Counter+View"
+            alt="Counter View"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/c2f8f8/000000?text=Counter+View';"
+          />
+          <img
+            src="https://placehold.co/400x300/e1d5f2/000000?text=Brand+Elements"
+            alt="Brand Elements"
+            class="w-full h-auto object-cover rounded-lg shadow-md"
+            onerror="this.onerror=null;this.src='https://placehold.co/400x300/e1d5f2/000000?text=Brand+Elements';"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sweet Stories of Happy Franchisee Partners (Testimonials) Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Sweet Stories of Happy Franchisee Partners
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Hear directly from those who are growing with Kiga Foods.
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Testimonial Card 1 -->
+          <div class="bg-kigaCream p-8 rounded-lg shadow-md flex items-start">
+            <img
+              src="https://placehold.co/80x80/ffd700/000000?text=JP"
+              alt="Franchisee Partner John P."
+              class="w-20 h-20 rounded-full object-cover mr-6 border-2 border-kigaCyan"
+              onerror="this.onerror=null;this.src='https://placehold.co/80x80/ffd700/000000?text=JP';"
+            />
+            <div>
+              <p class="text-lg italic text-gray-800 mb-4">
+                "Joining Kiga Foods was the best decision for my entrepreneurial
+                journey. The support, quality products, and brand recognition
+                have made my store a local favorite. Highly recommend!"
+              </p>
+              <p class="font-semibold text-kigaBrown">
+                - John P., Mumbai Franchisee
+              </p>
+            </div>
+          </div>
+          <!-- Testimonial Card 2 -->
+          <div class="bg-kigaCream p-8 rounded-lg shadow-md flex items-start">
+            <img
+              src="https://placehold.co/80x80/ffd700/000000?text=AS"
+              alt="Franchisee Partner Anjali S."
+              class="w-20 h-20 rounded-full object-cover mr-6 border-2 border-kigaCyan"
+              onerror="this.onerror=null;this.src='https://placehold.co/80x80/ffd700/000000?text=AS';"
+            />
+            <div>
+              <p class="text-lg italic text-gray-800 mb-4">
+                "The training was thorough, and the Kiga Foods team is always
+                there to help. Our customers love the unique Indian flavors, and
+                we've seen fantastic growth since opening!"
+              </p>
+              <p class="font-semibold text-kigaBrown">
+                - Anjali S., Delhi Franchisee
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Franchise Application Form Section -->
+    <section id="franchise-form" class="py-16 bg-kigaCream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Become a Kiga Foods Franchisee!
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Take the first step towards a sweet and successful partnership. Fill
+            out the form below.
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <form
+          action="#"
+          method="POST"
+          class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md"
+        >
+          <h3
+            class="text-xl font-semibold text-kigaBrown mb-6 border-b pb-3 border-gray-200"
+          >
+            Personal Information
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 mb-8">
+            <div>
+              <label
+                for="full-name"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="full-name"
+                name="full-name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="Your Full Name"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="email"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="mobile-number"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Mobile Number</label
+              >
+              <input
+                type="tel"
+                id="mobile-number"
+                name="mobile-number"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="+91 XXXXX XXXXX"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="current-city"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Current City</label
+              >
+              <input
+                type="text"
+                id="current-city"
+                name="current-city"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="e.g., Bengaluru"
+                required
+              />
+            </div>
+          </div>
+
+          <h3
+            class="text-xl font-semibold text-kigaBrown mb-6 border-b pb-3 border-gray-200"
+          >
+            Location Preferences
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 mb-8">
+            <div>
+              <label
+                for="pref-location-1"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Preferred Location 1</label
+              >
+              <input
+                type="text"
+                id="pref-location-1"
+                name="pref-location-1"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="City/Area"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="pref-location-2"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Preferred Location 2 (Optional)</label
+              >
+              <input
+                type="text"
+                id="pref-location-2"
+                name="pref-location-2"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="City/Area"
+              />
+            </div>
+            <div>
+              <label
+                for="area-type"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Preferred Area Type</label
+              >
+              <select
+                id="area-type"
+                name="area-type"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan bg-white"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="high-street">High Street/Main Road</option>
+                <option value="mall">Shopping Mall</option>
+                <option value="residential">Residential Area</option>
+                <option value="commercial">Commercial Hub</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="area-size"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Approx. Area Size (Sq. Ft.)</label
+              >
+              <input
+                type="number"
+                id="area-size"
+                name="area-size"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="e.g., 200-500"
+                required
+              />
+            </div>
+            <div>
+              <label
+                for="investment-range"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Investment Range (in Lakhs INR)</label
+              >
+              <select
+                id="investment-range"
+                name="investment-range"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan bg-white"
+                required
+              >
+                <option value="">Select an option</option>
+                <option value="5-10">5 - 10 Lakhs</option>
+                <option value="10-20">10 - 20 Lakhs</option>
+                <option value="20-30">20 - 30 Lakhs</option>
+                <option value="30+">30+ Lakhs</option>
+              </select>
+            </div>
+          </div>
+
+          <h3
+            class="text-xl font-semibold text-kigaBrown mb-6 border-b pb-3 border-gray-200"
+          >
+            Your Experience & Funding
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5 mb-8">
+            <div>
+              <label
+                for="business-experience"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Do you have previous business experience?</label
+              >
+              <select
+                id="business-experience"
+                name="business-experience"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan bg-white"
+                required
+              >
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="relevant-experience"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Any relevant industry experience?</label
+              >
+              <input
+                type="text"
+                id="relevant-experience"
+                name="relevant-experience"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                placeholder="e.g., Food & Beverage, Retail"
+              />
+            </div>
+            <div>
+              <label
+                for="source-funding"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >Primary Source of Funding</label
+              >
+              <select
+                id="source-funding"
+                name="source-funding"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan bg-white"
+                required
+              >
+                <option value="">Select</option>
+                <option value="personal-savings">Personal Savings</option>
+                <option value="bank-loan">Bank Loan</option>
+                <option value="investors">Investors</option>
+                <option value="family-friends">Family/Friends</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <label
+                for="hear-about-us"
+                class="block text-kigaBrown text-sm font-semibold mb-2"
+                >How did you hear about us?</label
+              >
+              <select
+                id="hear-about-us"
+                name="hear-about-us"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan bg-white"
+                required
+              >
+                <option value="">Select</option>
+                <option value="online-search">Online Search</option>
+                <option value="social-media">Social Media</option>
+                <option value="friend-referral">Friend/Family Referral</option>
+                <option value="advertisement">Advertisement</option>
+                <option value="exhibition">Exhibition/Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label
+              for="additional-comments"
+              class="block text-kigaBrown text-sm font-semibold mb-2"
+              >Additional Comments (Optional)</label
+            >
+            <textarea
+              id="additional-comments"
+              name="additional-comments"
+              rows="4"
+              class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-kigaCyan resize-y"
+              placeholder="Any other information you'd like to share?"
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-kigaCyan hover:bg-kigaCyanDark text-white font-bold py-3 px-8 rounded-full transition duration-300 focus:outline-none focus:ring-2 focus:ring-kigaCyan focus:ring-offset-2"
+            >
+              Submit Application
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- JavaScript for Navbar -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.getElementById("main-nav");
+        const logo = document.getElementById("nav-logo");
+        const desktopLinks = document.getElementById("desktop-menu-links");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const scrollThreshold = 50; // Pixels to scroll before changing navbar
+
+        const handleScroll = () => {
+          if (window.scrollY > scrollThreshold) {
+            nav.classList.add("bg-white", "shadow-md", "py-2");
+            nav.classList.remove("py-6");
+            logo.classList.add("h-16");
+            logo.classList.remove("h-24");
+            desktopLinks.classList.remove("text-white");
+            desktopLinks.classList.add("text-kigaBrown");
+            mobileMenuButton.classList.remove("text-white");
+            mobileMenuButton.classList.add("text-kigaCyan");
+          } else {
+            nav.classList.remove("bg-white", "shadow-md", "py-2");
+            nav.classList.add("py-6");
+            logo.classList.remove("h-16");
+            logo.classList.add("h-24");
+            desktopLinks.classList.add("text-white");
+            desktopLinks.classList.remove("text-kigaBrown");
+            mobileMenuButton.classList.add("text-white");
+            mobileMenuButton.classList.remove("text-kigaCyan");
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </body>
+</html>

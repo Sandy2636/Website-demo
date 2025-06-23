@@ -3,9 +3,1586 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Kiga Foods | Premium Indian Ice Cream & Dairy Products</title>
+    <meta
+      name="description"
+      content="Experience authentic Indian flavors with Kiga Foods' premium ice creams. Explore our traditional, seasonal & signature flavors. Franchise opportunities available."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // RENAMED for clarity: kigabg-kigaCyan is now kigaCyan
+              kigaCyan: "#20d1da",
+              kigaCyanDark: "#18a1aa", // ADDED for better hover effects
+              kigaCream: "#E9E8FC",
+              kigaBrown: "#6B4C3B",
+              kigaGold: "#FFD700",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Poppins"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      .carousel-item {
+        transition: opacity 1s ease-in-out;
+      }
+
+      .flavor-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      .scroll-container {
+        scrollbar-width: thin;
+        scrollbar-color: #20d1da transparent;
+      }
+
+      .scroll-container::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .scroll-container::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .scroll-container::-webkit-scrollbar-thumb {
+        background-color: #20d1da;
+        border-radius: 20px;
+      }
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .usp-grid {
+        perspective: 1000px;
+      }
+      .usp-card {
+        transform-style: preserve-3d;
+        /* A faster transition for a more responsive feel */
+        transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+      }
+      /* This new class will be toggled by JavaScript on mobile devices */
+      .usp-card.tapped {
+        transform: scale(1.05) rotateX(5deg) rotateY(10deg);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+      }
+    </style>
   </head>
-  <body>
-    This is Index.
+  <body class="font-body bg-kigaCream text-kigaBrown">
+    <nav
+      id="main-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img
+            id="nav-logo"
+            src="./logo file-03.webp"
+            alt="Kiga Foods Logo"
+            class="h-24 transition-all duration-300"
+          />
+        </div>
+
+        <div
+          id="desktop-menu-links"
+          class="hidden md:flex space-x-8 text-white"
+        >
+          <a
+            href="index.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="locations.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="franchise.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute w-full left-0 right-0 shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="relative">
+      <div class="relative overflow-hidden h-[80vh]">
+        <div
+          class="carousel-item absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-start opacity-0 transition-opacity duration-1000"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+          "
+        >
+          <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1
+              class="text-4xl md:text-6xl font-display font-bold mb-4 max-w-2xl text-shadow"
+            >
+              Premium Ice Cream with Authentic Indian Flavors
+            </h1>
+            <p class="text-xl mb-8 max-w-xl text-shadow">
+              Experience the rich heritage of India in every scoop
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#flavors"
+                class="bg-kigaCyan hover:bg-kigaCyanDark text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Explore Flavors</a
+              >
+              <a
+                href="#franchise"
+                class="bg-white hover:bg-gray-100 text-kigaCyan px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Become a Franchisee</a
+              >
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black opacity-40"></div>
+        </div>
+
+        <div
+          class="carousel-item absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-start opacity-0 transition-opacity duration-1000"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+          "
+        >
+          <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1
+              class="text-4xl md:text-6xl font-display font-bold mb-4 max-w-2xl text-shadow"
+            >
+              Traditional Recipes, Modern Delight
+            </h1>
+            <p class="text-xl mb-8 max-w-xl text-shadow">
+              Crafted with love using the finest ingredients
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#flavors"
+                class="bg-kigaCyan hover:bg-kigaCyanDark text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Our Menu</a
+              >
+              <a
+                href="./about.html"
+                class="bg-white hover:bg-gray-100 text-kigaCyan px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Our Story</a
+              >
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black opacity-40"></div>
+        </div>
+
+        <div
+          class="carousel-item absolute inset-0 w-full h-full bg-cover bg-center flex items-center justify-start opacity-0 transition-opacity duration-1000"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1502378735452-bc7d86632805?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+          "
+        >
+          <div class="container mx-auto px-4 relative z-10 text-white">
+            <h1
+              class="text-4xl md:text-6xl font-display font-bold mb-4 max-w-2xl text-shadow"
+            >
+              Grow with Kiga Foods
+            </h1>
+            <p class="text-xl mb-8 max-w-xl text-shadow">
+              Join our expanding family of franchise partners across India
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a
+                href="#franchise"
+                class="bg-kigaCyan hover:bg-kigaCyanDark text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Franchise Info</a
+              >
+              <a
+                href="#contact"
+                class="bg-white hover:bg-gray-100 text-kigaCyan px-6 py-3 rounded-full font-medium transition-colors duration-300"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-black opacity-40"></div>
+        </div>
+
+        <button
+          id="prev"
+          class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-kigaCyan hover:bg-opacity-80 p-3 rounded-full z-30 transition-all duration-300 shadow"
+        >
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button
+          id="next"
+          class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-kigaCyan hover:bg-opacity-80 p-3 rounded-full z-30 transition-all duration-300 shadow"
+        >
+          <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <div
+          class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2 z-30"
+        >
+          <button
+            class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300"
+          ></button>
+          <button
+            class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300"
+          ></button>
+          <button
+            class="carousel-indicator w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-80 transition-all duration-300"
+          ></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="usp" class="py-16 bg-white border-b border-gray-200">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold mb-4 text-kigaBrown"
+          >
+            Top Flavored Delights from Kiga Ice Creams
+          </h2>
+          <p class="max-w-2xl mx-auto text-gray-600">
+            Every scoop is a promise of purity, tradition, and unforgettable
+            taste.
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card Template -->
+          <div
+            class="usp-card bg-kigaCream rounded-xl overflow-hidden shadow-md flex flex-col"
+          >
+            <div class="w-full h-60 bg-white overflow-hidden">
+              <img
+                src="./Ice cream scoops/Natural and classics/muskmelon.png"
+                alt="Purest Ingredients"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div
+              class="p-5 text-center flex-grow flex flex-col justify-between"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-kigaBrown mb-2">
+                  Muskmelon
+                </h3>
+                <p class="text-sm text-gray-700">
+                  Sweet, smooth, and refreshing. Just like a ripe muskmelon!
+                  Enjoy a cool, mellow treat with one of our best product.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="usp-card bg-kigaCream rounded-xl overflow-hidden shadow-md flex flex-col"
+          >
+            <div class="w-full h-60 bg-white overflow-hidden">
+              <img
+                src="./Ice cream scoops/chocolate/Chocolate Caramel Ribbon.png"
+                alt="Authentic Recipes"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div
+              class="p-5 text-center flex-grow flex flex-col justify-between"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-kigaBrown mb-2">
+                  Chocolate Brownie fudge
+                </h3>
+                <p class="text-sm text-gray-700">
+                  The perfect combination of creamy chocolate ice cream, fudgy
+                  brownie chunks, and a smooth chocolate fudge swirl.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="usp-card bg-kigaCream rounded-xl overflow-hidden shadow-md flex flex-col"
+          >
+            <div class="w-full h-60 bg-white overflow-hidden">
+              <img
+                src="./Ice cream scoops/Natural and classics/lychie cherry.png"
+                alt="Handcrafted with Love"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div
+              class="p-5 text-center flex-grow flex flex-col justify-between"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-kigaBrown mb-2">
+                  Lychee - Cherry
+                </h3>
+                <p class="text-sm text-gray-700">
+                  The sweet tartness of cherries meets the exotic sweetness of
+                  lychees in this irresistible ice cream. A taste sensation you
+                  won't forget.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="usp-card bg-kigaCream rounded-xl overflow-hidden shadow-md flex flex-col"
+          >
+            <div class="w-full h-60 bg-white overflow-hidden">
+              <img
+                src="./Ice cream scoops/chocolate/bellgian chocolate.png"
+                alt="Absolutely No Nasties"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div
+              class="p-5 text-center flex-grow flex flex-col justify-between"
+            >
+              <div>
+                <h3 class="text-lg font-semibold text-kigaBrown mb-2">
+                  Belgian Chocolate Chips
+                </h3>
+                <p class="text-sm text-gray-700">
+                  Rich, creamy, and packed with real Belgian chocolate chips.
+                  Pure dessert bliss.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-[#fff6f4] text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#5a2e1e] mb-2">
+        Flavors to Fall in Love With
+      </h2>
+      <p class="text-gray-600 text-base md:text-lg mb-12">
+        A scoop for every craving – handcrafted & unforgettable.
+      </p>
+
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 max-w-6xl mx-auto px-4"
+      >
+        <a
+          href="/category/nature-and-classic.html"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#7cc768] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="./Ice cream scoops/Natural and classics/fruit blast.png"
+              alt="Fruitylicious"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">
+            Natural & Classic Ice cream
+          </span>
+        </a>
+
+        <a
+          href="/category/ripples.html"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#94d3dc] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="./Ice cream scoops/ripples/chocolate ripple.png"
+              alt="Chocolicious"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Ripple Ice cream </span>
+        </a>
+
+        <a
+          href="/category/chocolicious"
+          class="flex flex-col items-center group"
+        >
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#94d3dc] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="./Ice cream scoops//traditional/mawa rabdi.png"
+              alt="Chocolicious"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Traditional Ice cream </span>
+        </a>
+
+        <a href="/category/seasonal" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#fbd1d1] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="./Ice cream scoops/chocolate/bellgian chocolate.png"
+              alt="Seasonal"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Chocolate Ice cream </span>
+        </a>
+
+        <a href="/category/festive" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#c3b5ec] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="./Ice cream scoops/no added sugar/anjeer no added sugar.png"
+              alt="Festive"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]"
+            >No Added Sugar Ice cream
+          </span>
+        </a>
+
+        <a href="/category/zero-sugar" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#d2c35e] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="coffee/cold cocoawith crush.png"
+              alt="Zero Sugar"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Cold Coffee </span>
+        </a>
+        <a href="/category/zero-sugar" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#d2c35e] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="IceCreamSandwitch.png"
+              alt="Zero Sugar"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Loco </span>
+        </a>
+        <a href="/category/zero-sugar" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#d2c35e] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="milkshakes/GULKAND SHAKE.png"
+              alt="Zero Sugar"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Mastani </span>
+        </a>
+        <a href="/category/zero-sugar" class="flex flex-col items-center group">
+          <div
+            class="w-28 h-28 overflow-hidden rounded-full bg-[#d2c35e] flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110"
+          >
+            <img
+              src="milkshakes/chocolate milk shakes.png"
+              alt="Zero Sugar"
+              class="h-full object-cover"
+            />
+          </div>
+          <span class="font-semibold text-[#333]">Milkshakes </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- <section id="flavors" class="py-16 bg-kigaCream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Our Signature Flavors
+          </h2>
+          <p class="max-w-2xl mx-auto mb-6">
+            Discover our handcrafted flavors that blend tradition with luxury
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto"></div>
+        </div>
+
+        <div class="flex justify-center mb-8">
+          <div class="inline-flex rounded-md shadow-sm" role="group">
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium rounded-l-lg bg-kigaCyan text-white"
+            >
+              All Flavors
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium bg-white text-kigaCyan"
+            >
+              Traditional
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium bg-white text-kigaCyan"
+            >
+              Seasonal
+            </button>
+            <button
+              type="button"
+              class="px-4 py-2 text-sm font-medium rounded-r-lg bg-white text-kigaCyan"
+            >
+              Signature
+            </button>
+          </div>
+        </div>
+
+        <div class="scroll-container overflow-x-auto pb-6 -mx-4 px-4">
+          <div class="flex space-x-6 w-max min-w-full">
+            <div
+              class="flavor-card bg-white rounded-lg overflow-hidden shadow-sm w-72 flex-shrink-0 transition-all duration-300"
+            >
+              <div
+                class="h-48 bg-cover bg-center"
+                style="
+                  background-image: url('https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1944&q=80');
+                "
+              ></div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-display font-semibold">
+                    Kesar Pista
+                  </h3>
+                  <span class="bg-kigaGold text-xs px-2 py-1 rounded-full"
+                    >Best Seller</span
+                  >
+                </div>
+                <p class="text-sm mb-4">
+                  A rich saffron and pistachio delight that echoes the royal
+                  flavors of India.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flavor-card bg-white rounded-lg overflow-hidden shadow-sm w-72 flex-shrink-0 transition-all duration-300"
+            >
+              <div
+                class="h-48 bg-cover bg-center"
+                style="
+                  background-image: url('./Screenshot\ 2025-06-05\ 000859.png');
+                "
+              ></div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-display font-semibold">
+                    Alphonso Mango
+                  </h3>
+                  <span class="bg-kigaGold text-xs px-2 py-1 rounded-full"
+                    >Seasonal</span
+                  >
+                </div>
+                <p class="text-sm mb-4">
+                  Made with real Ratnagiri Alphonso mangoes for that perfect
+                  summer refreshment.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flavor-card bg-white rounded-lg overflow-hidden shadow-sm w-72 flex-shrink-0 transition-all duration-300"
+            >
+              <div
+                class="h-48 bg-cover bg-center"
+                style="background-image: url('PapayaGlass.png')"
+              ></div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-display font-semibold">
+                    Juicy Papaya
+                  </h3>
+                  <span class="bg-kigaGold text-xs px-2 py-1 rounded-full"
+                    >Seasonal</span
+                  >
+                </div>
+                <p class="text-sm mb-4">
+                  Made with real Ratnagiri Alphonso mangoes for that perfect
+                  summer refreshment.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flavor-card bg-white rounded-lg overflow-hidden shadow-sm w-72 flex-shrink-0 transition-all duration-300"
+            >
+              <div
+                class="h-48 bg-cover bg-center"
+                style="background-image: url('IceCreamSandwitch.png')"
+              ></div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-display font-semibold">Sandwitch</h3>
+                  <span class="bg-yellow-100 text-xs px-2 py-1 rounded-full"
+                    >New</span
+                  >
+                </div>
+                <p class="text-sm mb-4">
+                  A delicate blend of rose petals and gulkand for a floral,
+                  luxurious treat.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flavor-card bg-white rounded-lg overflow-hidden shadow-sm w-72 flex-shrink-0 transition-all duration-300"
+            >
+              <div
+                class="h-48 bg-cover bg-center"
+                style="background-image: url('KachiKariIceCream.png')"
+              ></div>
+              <div class="p-6">
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="text-xl font-display font-semibold">
+                    Kachi Karie
+                  </h3>
+                  <span class="bg-kigaGold text-xs px-2 py-1 rounded-full"
+                    >Seasonal</span
+                  >
+                </div>
+                <p class="text-sm mb-4">
+                  The festival favorite - almonds, cardamom, saffron and rose in
+                  one magical scoop.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="#"
+            class="inline-block border border-kigaCyan text-kigaCyan hover:bg-kigaCyan hover:text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+            >View Full Menu</a
+          >
+        </div>
+      </div>
+    </section> -->
+
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Our Story
+          </h2>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+          <div class="md:w-1/2">
+            <img
+              src="Screenshot 2025-06-05 000859.png"
+              alt="Kiga Foods Ice Cream"
+              class="w-full h-auto rounded-lg shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-display font-semibold mb-4 text-kigaCyan">
+              From Tradition to Innovation
+            </h3>
+            <p class="mb-6">
+              Kiga Foods was born from a passion to bring authentic Indian
+              flavors to the world of premium ice cream. Our founders, Kiran
+              Suresh Salunke and Ganesh Rajendra Gosavi, combined their
+              expertise in dairy technology and traditional Indian recipes to
+              create something truly special.
+            </p>
+            <p class="mb-6">
+              We use only the finest ingredients, from Alphonso mangoes to real
+              Kashmiri saffron, ensuring each scoop delivers an unforgettable
+              taste experience.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaCyan rounded-full p-2">
+                  <i class="fas fa-leaf text-xl"></i>
+                </div>
+                <span>Premium Ingredients</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaCyan rounded-full p-2">
+                  <i class="fas fa-heart text-xl"></i>
+                </div>
+                <span>Authentic Recipes</span>
+              </div>
+              <div class="flex items-center space-x-3">
+                <div class="bg-kigaCream text-kigaCyan rounded-full p-2">
+                  <i class="fas fa-star text-xl"></i>
+                </div>
+                <span>Premium Quality</span>
+              </div>
+            </div>
+            <a href="./about.html"><button>Read More</button></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-16 bg-white">
+      <div
+        class="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-center gap-12 text-center md:text-left"
+      >
+        <!-- Left: Text Content -->
+        <div class="md:w-1/2">
+          <h2
+            class="text-4xl md:text-5xl font-display font-bold leading-tight mb-4"
+          >
+            <span class="text-kigabg-kigaCyan">Franchisee</span> Happiness
+            Together
+          </h2>
+          <p class="text-gray-700 mb-6 text-lg max-w-md mx-auto md:mx-0">
+            Our brand isn’t just about serving ice creams — it creates happiness
+            and unforgettable memories! This is your chance to be part of an
+            iconic business where passion meets profitability.
+          </p>
+          <a
+            href="/franchise-form"
+            class="inline-block bg-kigaCyan hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
+          >
+            Apply Now
+          </a>
+        </div>
+
+        <!-- Right: Circle Image -->
+        <div class="md:w-1/2 flex justify-center">
+          <div
+            class="w-[280px] h-[280px] md:w-[360px] md:h-[360px] rounded-full overflow-hidden border-4 border-white shadow-lg"
+          >
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Franchise Meeting"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-kigaCream">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            What Our Customers Say
+          </h2>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Testimonial 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+                  alt="Priya M."
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-medium">Priya M.</h4>
+                <div class="flex text-kigaGold text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm italic">
+              "The Kesar Pista flavor took me straight back to my childhood in
+              Jaipur. The authenticity of flavors is unmatched by any other
+              brand I've tried. Definitely worth every penny!"
+            </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+                  alt="Rohan K."
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-medium">Rohan K.</h4>
+                <div class="flex text-kigaGold text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm italic">
+              "As someone who has traveled the world tasting ice creams, Kiga's
+              Thandai flavor during Holi season is an absolute masterpiece. The
+              texture is perfect—creamy without being too heavy."
+            </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center space-x-3 mb-4">
+              <div class="w-12 h-12 rounded-full overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                  alt="Aarav & Meera"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-medium">Aarav & Meera</h4>
+                <div class="flex text-kigaGold text-sm">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-sm italic">
+              "We became franchisees last year and couldn't be happier. The
+              brand support is excellent, and seeing customers' faces light up
+              when they try our products makes it all worthwhile."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Feed -->
+    <section class="py-8 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            #KigaMoments
+          </h2>
+          <p class="max-w-2xl mx-auto mb-6">
+            Follow us on Instagram for the latest flavors and promotions
+          </p>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto"></div>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-1">
+          <!-- Instagram Post 1 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Instagram Post 2 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="https://images.unsplash.com/photo-1560008581-09826d1de69e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1944&q=80"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Instagram Post 3 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Instagram Post 4 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2127&q=80"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Instagram Post 5 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="data:image/jpeg;base64,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"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+
+          <!-- Instagram Post 6 -->
+          <a href="#" class="group relative overflow-hidden aspect-square">
+            <img
+              src="https://images.unsplash.com/photo-1550583724-b2692b85b150?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Ice cream"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-300 flex items-center justify-center"
+            >
+              <i
+                class="fab fa-instagram text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="text-center mt-8">
+          <a
+            href="#"
+            class="inline-flex items-center justify-center space-x-2 border border-kigabg-kigaCyan text-kigabg-kigaCyan hover:bg-kigaCyan hover:text-white px-6 py-3 rounded-full font-medium transition-colors duration-300"
+          >
+            <i class="fab fa-instagram"></i>
+            <span>Follow Us</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section id="contact" class="py-16 bg-kigaCyanDark text-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">
+            Get In Touch
+          </h2>
+          <p class="max-w-2xl mx-auto mb-6">
+            We'd love to hear from you - whether it's feedback, franchise
+            queries, or just to say hello!
+          </p>
+          <div class="w-24 h-1 bg-white mx-auto"></div>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2">
+            <div
+              class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm h-full"
+            >
+              <h3 class="text-2xl font-display font-semibold mb-6">
+                Contact Information
+              </h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="text-xl mt-1">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-1">Headquarters</h4>
+                    <p class="text-sm">
+                      Shop No. 5, Ganesh Plaza, Pimple Gurav, Pune, Maharashtra
+                      - 411061
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="text-xl mt-1">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-1">Phone</h4>
+                    <p class="text-sm">+91 9066549696 (10 AM - 7 PM)</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="text-xl mt-1">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-1">Email</h4>
+                    <p class="text-sm">hello@kigafoods.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="text-xl mt-1">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-1">Business Hours</h4>
+                    <p class="text-sm">
+                      Monday - Saturday: 10:00 AM - 10:00 PM<br />Sunday: 10:00
+                      AM - 11:00 PM
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h4 class="font-display font-semibold mb-4">Follow Us</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="text-white hover:text-kigaGold transition-colors duration-300 text-xl"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-white hover:text-kigaGold transition-colors duration-300 text-xl"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-white hover:text-kigaGold transition-colors duration-300 text-xl"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="text-white hover:text-kigaGold transition-colors duration-300 text-xl"
+                  >
+                    <i class="fab fa-youtube"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-1/2">
+            <div class="bg-white text-kigaBrown p-8 rounded-lg h-full">
+              <h3 class="text-2xl font-display font-semibold mb-6">
+                Send Us a Message
+              </h3>
+
+              <form class="space-y-4">
+                <div>
+                  <label
+                    for="contact-name"
+                    class="block text-sm font-medium mb-1"
+                    >Name*</label
+                  >
+                  <input
+                    type="text"
+                    id="contact-name"
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-kigabg-kigaCyan focus:border-transparent"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="contact-email"
+                    class="block text-sm font-medium mb-1"
+                    >Email*</label
+                  >
+                  <input
+                    type="email"
+                    id="contact-email"
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-kigabg-kigaCyan focus:border-transparent"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="contact-subject"
+                    class="block text-sm font-medium mb-1"
+                    >Subject*</label
+                  >
+                  <input
+                    type="text"
+                    id="contact-subject"
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-kigabg-kigaCyan focus:border-transparent"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="contact-message"
+                    class="block text-sm font-medium mb-1"
+                    >Message*</label
+                  >
+                  <textarea
+                    id="contact-message"
+                    rows="4"
+                    class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-kigabg-kigaCyan focus:border-transparent"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="pt-2">
+                  <button
+                    type="submit"
+                    class="w-full bg-kigaCyan hover:bg-red-800 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-300"
+                  >
+                    Send Message
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 bg-white bg-opacity-10 p-8 rounded-lg backdrop-blur-sm"
+        >
+          <h3 class="text-2xl font-display font-semibold mb-6 text-center">
+            Our Location
+          </h3>
+          <div class="h-80 w-full rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.8883154712764!2d73.78420321489335!3d18.633518887339767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9c0c28e9a2f%3A0x3e2f830cf7bf1a3b!2sPimple%20Gurav%2C%20Pune%2C%20Maharashtra%20411061!5e0!3m2!1sen!2sin!4v1686658269394!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Newsletter -->
+    <!-- <section class="py-12 bg-kigaGold text-kigaBrown">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-display font-semibold mb-2">
+              Join Our Sweet Community
+            </h3>
+            <p class="text-sm">
+              Subscribe to receive updates on new flavors, special offers, and
+              store openings near you.
+            </p>
+          </div>
+
+          <form class="flex">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="flex-grow px-4 py-3 rounded-l-lg focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-kigaCyan text-white px-6 py-3 rounded-r-lg font-medium hover:bg-red-800 transition-colors duration-300"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-kigaBrown text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <img
+              src="KigaLogo-removebg-preview.png"
+              alt="Kiga Foods Logo"
+              class="h-14 mb-4"
+            />
+            <p class="text-sm mb-4">
+              Kiga Foods brings you premium ice creams with authentic Indian
+              flavors, crafted using traditional recipes and the finest
+              ingredients.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#home"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#flavors"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Our Flavors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#franchise"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Franchise</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Support</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Shipping & Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Store Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Payment Methods</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Contact</h4>
+            <address class="text-sm not-italic mb-4">
+              Shop No. 5, Ganesh Plaza<br />
+              Pimple Gurav, Pune<br />
+              Maharashtra - 411061
+            </address>
+            <div class="space-y-1 text-sm">
+              <p>
+                <a
+                  href="tel:+919066549696"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >+91 9066549696</a
+                >
+              </p>
+              <p>
+                <a
+                  href="mailto:hello@kigafoods.com"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >hello@kigafoods.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-white border-opacity-20 flex flex-col md:flex-row justify-between items-center text-sm"
+        >
+          <p>&copy; 2023 Kiga Foods. All rights reserved.</p>
+          <div class="mt-4 md:mt-0">
+            <a
+              href="#"
+              class="hover:text-kigaGold transition-colors duration-300"
+              >Privacy Policy</a
+            >
+            <span class="mx-2">•</span>
+            <a
+              href="#"
+              class="hover:text-kigaGold transition-colors duration-300"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Navbar Scroll Logic ---
+        const nav = document.getElementById("main-nav");
+        const logo = document.getElementById("nav-logo");
+        const desktopLinks = document.getElementById("desktop-menu-links");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const scrollThreshold = 50; // Pixels to scroll before changing navbar
+
+        const handleScroll = () => {
+          if (window.scrollY > scrollThreshold) {
+            nav.classList.add("bg-white", "shadow-md", "py-2");
+            nav.classList.remove("py-6");
+            logo.classList.add("h-16");
+            logo.classList.remove("h-24");
+            desktopLinks.classList.remove("text-white");
+            desktopLinks.classList.add("text-kigaBrown");
+            mobileMenuButton.classList.remove("text-white");
+            mobileMenuButton.classList.add("text-kigaCyan");
+          } else {
+            nav.classList.remove("bg-white", "shadow-md", "py-2");
+            nav.classList.add("py-6");
+            logo.classList.remove("h-16");
+            logo.classList.add("h-24");
+            desktopLinks.classList.add("text-white");
+            desktopLinks.classList.remove("text-kigaBrown");
+            mobileMenuButton.classList.add("text-white");
+            mobileMenuButton.classList.remove("text-kigaCyan");
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // --- Carousel Logic ---
+        const carouselItems = document.querySelectorAll(".carousel-item");
+        const indicators = document.querySelectorAll(".carousel-indicator");
+        const prevButton = document.getElementById("prev");
+        const nextButton = document.getElementById("next");
+        let currentIndex = 0;
+
+        function updateCarousel() {
+          carouselItems.forEach((item, index) => {
+            item.style.opacity = index === currentIndex ? "1" : "0";
+          });
+          indicators.forEach((indicator, index) => {
+            if (index === currentIndex) {
+              indicator.classList.add("bg-opacity-100");
+              indicator.classList.remove("bg-opacity-50");
+            } else {
+              indicator.classList.remove("bg-opacity-100");
+              indicator.classList.add("bg-opacity-50");
+            }
+          });
+        }
+
+        function showNext() {
+          currentIndex = (currentIndex + 1) % carouselItems.length;
+          updateCarousel();
+        }
+
+        function showPrev() {
+          currentIndex =
+            (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+          updateCarousel();
+        }
+
+        nextButton.addEventListener("click", showNext);
+        prevButton.addEventListener("click", showPrev);
+
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener("click", () => {
+            currentIndex = index;
+            updateCarousel();
+          });
+        });
+
+        setInterval(showNext, 5000); // Auto-play every 5 seconds
+        updateCarousel(); // Initial setup
+      });
+
+      const uspCards = document.querySelectorAll(".usp-card");
+      const isTouchDevice =
+        "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+      if (isTouchDevice) {
+        // --- Mobile & Touch Device Logic ---
+        uspCards.forEach((card) => {
+          card.addEventListener("click", function () {
+            // Deactivate all other cards first
+            uspCards.forEach((otherCard) => {
+              if (otherCard !== this) {
+                otherCard.classList.remove("tapped");
+              }
+            });
+            // Toggle the tapped state on the clicked card
+            this.classList.toggle("tapped");
+          });
+        });
+      } else {
+        // --- Desktop & Mouse Device Logic ---
+        uspCards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left; // x position within the element.
+            const y = e.clientY - rect.top; // y position within the element.
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            // The divisor controls the intensity of the tilt.
+            const rotateX = ((y - centerY) / centerY) * -8;
+            const rotateY = ((x - centerX) / centerX) * 8;
+
+            card.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+
+          card.addEventListener("mouseleave", () => {
+            // Reset the transform on mouse leave
+            card.style.transform = "scale(1) rotateX(0) rotateY(0)";
+          });
+        });
+      }
+    </script>
   </body>
 </html>

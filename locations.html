@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Foods | Store Locations</title>
+    <meta
+      name="description"
+      content="Find Kiga Foods ice cream parlors near you. Explore our flagship store and search for locations across India."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              kigaCyan: "#20d1da",
+              kigaCyanDark: "#18a1aa",
+              kigaCream: "#E9E8FC",
+              kigaBrown: "#6B4C3B",
+              kigaGold: "#FFD700",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Poppins"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap");
+
+      .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      #map {
+        height: 450px; /* Increased height for better map view */
+        width: 100%;
+        border-radius: 0.75rem; /* rounded-xl equivalent */
+      }
+    </style>
+  </head>
+  <body class="font-body bg-kigaCream text-kigaBrown">
+    <!-- Navigation Bar -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img
+            id="nav-logo"
+            src="./logo file-03.webp"
+            alt="Kiga Foods Logo"
+            class="h-24 transition-all duration-300"
+          />
+        </div>
+
+        <div
+          id="desktop-menu-links"
+          class="hidden md:flex space-x-8 text-white"
+        >
+          <a
+            href="index.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="locations.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="franchise.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="contact.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute w-full left-0 right-0 shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Store Locator Section -->
+    <section id="locations" class="py-24 bg-kigaCream mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+          <h2
+            class="text-3xl md:text-4xl font-display font-bold mb-4 text-kigaBrown"
+          >
+            Find Us Near You
+          </h2>
+          <div class="w-24 h-1 bg-kigaCyan mx-auto mb-6"></div>
+          <p class="text-lg max-w-3xl mx-auto text-gray-700">
+            With 30+ outlets across 20+ cities, there's always a Kiga Foods
+            nearby to satisfy your cravings.
+          </p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/3 mb-8 md:mb-0">
+            <div class="bg-white p-6 rounded-xl shadow-lg h-full">
+              <h3 class="text-xl font-display font-bold mb-4 text-kigaBrown">
+                Our Flagship Store
+              </h3>
+              <div class="flex items-start mb-4">
+                <div class="text-kigaCyan mr-3 mt-1">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <p class="text-gray-700">
+                  123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001
+                </p>
+              </div>
+              <div class="flex items-start mb-4">
+                <div class="text-kigaCyan mr-3 mt-1">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <p class="text-gray-700">+91 9876543210</p>
+              </div>
+              <div class="flex items-start mb-6">
+                <div class="text-kigaCyan mr-3 mt-1">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <p class="text-gray-700">
+                  Open daily from 11:00 AM to 11:00 PM
+                </p>
+              </div>
+              <button
+                id="get-directions-btn"
+                data-address="123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001"
+                class="w-full bg-kigaCyan text-white py-3 rounded-full hover:bg-kigaCyanDark transition-colors duration-300 font-semibold"
+              >
+                Get Directions
+              </button>
+
+              <!-- Additional Locations List (Scrollable) -->
+              <div class="mt-8 border-t pt-6 border-gray-200">
+                <h3 class="text-lg font-bold text-kigaBrown mb-4">
+                  Other Locations
+                </h3>
+                <div class="h-64 overflow-y-auto pr-2">
+                  <div
+                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
+                  >
+                    <p class="font-semibold text-kigaBrown">
+                      Mumbai - Bandra West
+                    </p>
+                    <p class="text-sm text-gray-700">
+                      Linking Road, Bandra West, Mumbai, MH
+                    </p>
+                    <a
+                      href="tel:+919988776655"
+                      class="text-kigaCyan text-sm hover:underline"
+                      >+91 9988776655</a
+                    >
+                  </div>
+                  <div
+                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
+                  >
+                    <p class="font-semibold text-kigaBrown">
+                      Delhi - Connaught Place
+                    </p>
+                    <p class="text-sm text-gray-700">
+                      Block C, Connaught Place, New Delhi, DL
+                    </p>
+                    <a
+                      href="tel:+919765432109"
+                      class="text-kigaCyan text-sm hover:underline"
+                      >+91 9765432109</a
+                    >
+                  </div>
+                  <div
+                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
+                  >
+                    <p class="font-semibold text-kigaBrown">
+                      Bengaluru - Koramangala
+                    </p>
+                    <p class="text-sm text-gray-700">
+                      80 Feet Road, Koramangala, Bengaluru, KA
+                    </p>
+                    <a
+                      href="tel:+919123456789"
+                      class="text-kigaCyan text-sm hover:underline"
+                      >+91 9123456789</a
+                    >
+                  </div>
+                  <div
+                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
+                  >
+                    <p class="font-semibold text-kigaBrown">
+                      Hyderabad - Hitech City
+                    </p>
+                    <p class="text-sm text-gray-700">
+                      Cyber Towers, Hitech City, Hyderabad, TS
+                    </p>
+                    <a
+                      href="tel:+918765432109"
+                      class="text-kigaCyan text-sm hover:underline"
+                      >+91 8765432109</a
+                    >
+                  </div>
+                  <div
+                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
+                  >
+                    <p class="font-semibold text-kigaBrown">
+                      Chennai - Anna Nagar
+                    </p>
+                    <p class="text-sm text-gray-700">
+                      Anna Nagar East, Chennai, TN
+                    </p>
+                    <a
+                      href="tel:+917654321098"
+                      class="text-kigaCyan text-sm hover:underline"
+                      >+91 7654321098</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="md:w-2/3">
+            <div class="bg-white p-4 rounded-xl shadow-lg h-full">
+              <!-- Map Container -->
+              <div id="map" class="rounded-lg shadow-inner"></div>
+
+              <div class="mt-4">
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="font-bold text-kigaBrown">
+                    Search Nearby Locations
+                  </h3>
+                  <button
+                    class="text-kigaCyan hover:text-kigaCyanDark transition-colors duration-300"
+                  >
+                    <i class="fas fa-sliders-h"></i>
+                  </button>
+                </div>
+                <div class="relative">
+                  <input
+                    type="text"
+                    id="location-search-input"
+                    placeholder="Enter your location or pincode"
+                    class="w-full border border-gray-300 rounded-full py-3 px-5 pr-10 focus:outline-none focus:ring-2 focus:ring-kigaCyan"
+                  />
+                  <button
+                    id="search-location-btn"
+                    class="absolute right-3 top-1/2 -translate-y-1/2 text-kigaCyan"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+                <div class="mt-4 text-sm text-gray-600">
+                  <p>Example: "Pune," "Koregaon Park," or "411001"</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps API Script (replace YOUR_GOOGLE_MAPS_API_KEY) -->
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7PmxXNdHKnLj9Ntxzc4GyhbORfn5QpMM&callback=initMap"
+    ></script>
+
+    <!-- JavaScript for Navbar & Map -->
+    <script>
+      // Sample store locations data
+      const storeLocations = [
+        {
+          name: "Kiga Foods Flagship Store",
+          address:
+            "123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001",
+          lat: 18.5309,
+          lng: 73.8943,
+        },
+        {
+          name: "Mumbai - Bandra West",
+          address: "Linking Road, Bandra West, Mumbai, MH",
+          lat: 19.0592,
+          lng: 72.8299,
+        },
+        {
+          name: "Delhi - Connaught Place",
+          address: "Block C, Connaught Place, New Delhi, DL",
+          lat: 28.6324,
+          lng: 77.2188,
+        },
+        {
+          name: "Bengaluru - Koramangala",
+          address: "80 Feet Road, Koramangala, Bengaluru, KA",
+          lat: 12.9352,
+          lng: 77.6245,
+        },
+        {
+          name: "Hyderabad - Hitech City",
+          address: "Cyber Towers, Hitech City, Hyderabad, TS",
+          lat: 17.4475,
+          lng: 78.3756,
+        },
+        {
+          name: "Chennai - Anna Nagar",
+          address: "Anna Nagar East, Chennai, TN",
+          lat: 13.0784,
+          lng: 80.2081,
+        },
+      ];
+
+      let map;
+      let markers = []; // Array to hold map markers
+
+      function initMap() {
+        // Initialize map centered on India or a default location
+        const center = { lat: 20.5937, lng: 78.9629 }; // Center of India
+        map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 5,
+          center: center,
+        });
+
+        // Add markers for each store location
+        storeLocations.forEach((location) => {
+          const marker = new google.maps.Marker({
+            position: { lat: location.lat, lng: location.lng },
+            map: map,
+            title: location.name,
+          });
+
+          // Info window for each marker
+          const infowindow = new google.maps.InfoWindow({
+            content: `
+              <div class="font-body">
+                <h4 class="font-semibold text-kigaBrown">${location.name}</h4>
+                <p class="text-sm text-gray-700">${location.address}</p>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                  location.address
+                )}" target="_blank" class="text-kigaCyan text-sm hover:underline">Get Directions</a>
+              </div>
+            `,
+          });
+
+          marker.addListener("click", () => {
+            infowindow.open(map, marker);
+          });
+          markers.push(marker); // Store marker in the array
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.getElementById("main-nav");
+        const logo = document.getElementById("nav-logo");
+        const desktopLinks = document.getElementById("desktop-menu-links");
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const scrollThreshold = 50; // Pixels to scroll before changing navbar
+
+        const handleScroll = () => {
+          if (window.scrollY > scrollThreshold) {
+            nav.classList.add("bg-white", "shadow-md", "py-2");
+            nav.classList.remove("py-6");
+            logo.classList.add("h-16");
+            logo.classList.remove("h-24");
+            desktopLinks.classList.remove("text-white");
+            desktopLinks.classList.add("text-kigaBrown");
+            mobileMenuButton.classList.remove("text-white");
+            mobileMenuButton.classList.add("text-kigaCyan");
+          } else {
+            nav.classList.remove("bg-white", "shadow-md", "py-2");
+            nav.classList.add("py-6");
+            logo.classList.remove("h-16");
+            logo.classList.add("h-24");
+            desktopLinks.classList.add("text-white");
+            desktopLinks.classList.remove("text-kigaBrown");
+            mobileMenuButton.classList.add("text-white");
+            mobileMenuButton.classList.remove("text-kigaCyan");
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // --- Mobile Menu Toggle ---
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+        const getDirectionsBtn = document.getElementById("get-directions-btn");
+        const locationSearchInput = document.getElementById(
+          "location-search-input"
+        );
+        const searchLocationBtn = document.getElementById(
+          "search-location-btn"
+        );
+
+        // --- Mobile Menu Toggle ---
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          // Toggle icon between bars and times
+          mobileMenuButton.querySelector("i").classList.toggle("fa-bars");
+          mobileMenuButton.querySelector("i").classList.toggle("fa-times");
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            mobileMenuButton.querySelector("i").classList.add("fa-bars");
+            mobileMenuButton.querySelector("i").classList.remove("fa-times");
+          });
+        });
+
+        // // Ensure nav is styled for sub-pages
+        // mainNav.classList.add("bg-kigaBrown", "shadow-lg", "py-3");
+        // mainNav.classList.remove("py-6", "bg-transparent");
+        // navLogo.classList.add("h-16");
+        // navLogo.classList.remove("h-24");
+
+        // --- "Get Directions" Button Functionality ---
+        if (getDirectionsBtn) {
+          getDirectionsBtn.addEventListener("click", () => {
+            const address = getDirectionsBtn.dataset.address;
+            if (address) {
+              // Open Google Maps in a new tab with directions
+              window.open(
+                `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                  address
+                )}`,
+                "_blank"
+              );
+            }
+          });
+        }
+
+        // --- Search Functionality (Basic - Pan map to relevant area) ---
+        // A full search would involve geocoding the input and filtering markers.
+        // This basic version will just pan the map if a known city is entered.
+        searchLocationBtn.addEventListener("click", () => {
+          const query = locationSearchInput.value.toLowerCase();
+          const foundLocation = storeLocations.find(
+            (loc) =>
+              loc.name.toLowerCase().includes(query) ||
+              loc.address.toLowerCase().includes(query) ||
+              query.includes(
+                loc.address.split(",").slice(-2, -1)[0].toLowerCase().trim()
+              ) // crude city match
+          );
+
+          if (foundLocation) {
+            map.setCenter({ lat: foundLocation.lat, lng: foundLocation.lng });
+            map.setZoom(12); // Zoom in on the found location
+            // Optional: Trigger info window for the found marker
+            const foundMarker = markers.find(
+              (marker) => marker.getTitle() === foundLocation.name
+            );
+            if (foundMarker) {
+              new google.maps.InfoWindow({
+                content: `
+                            <div class="font-body">
+                                <h4 class="font-semibold text-kigaBrown">${
+                                  foundLocation.name
+                                }</h4>
+                                <p class="text-sm text-gray-700">${
+                                  foundLocation.address
+                                }</p>
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                                  foundLocation.address
+                                )}" target="_blank" class="text-kigaCyan text-sm hover:underline">Get Directions</a>
+                            </div>
+                        `,
+              }).open(map, foundMarker);
+            }
+          } else {
+            // In a real app, you might show a message or try Google Places API
+            console.log("Location not found or not in our sample data.");
+            alert(
+              "Location not found in our sample data. Please try another city or address."
+            ); // Use a custom modal in production
+          }
+        });
+
+        // Add a basic list of additional locations
+        const locationsList = document.querySelector(".h-64.overflow-y-auto");
+        if (locationsList) {
+          // You could dynamically generate this list from storeLocations array
+          // For now, it's hardcoded in HTML as per the sample.
+          // Ensure the 'Get Directions' links here also use the Google Maps URL.
+        }
+      });
+    </script>
+  </body>
+</html>
