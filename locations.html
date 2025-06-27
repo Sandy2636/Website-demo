@@ -163,32 +163,11 @@
               <h3 class="text-xl font-display font-bold mb-4 text-kigaBrown">
                 Our Flagship Store
               </h3>
-              <div class="flex items-start mb-4">
-                <div class="text-kigaCyan mr-3 mt-1">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <p class="text-gray-700">
-                  123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001
-                </p>
-              </div>
-              <div class="flex items-start mb-4">
-                <div class="text-kigaCyan mr-3 mt-1">
-                  <i class="fas fa-phone-alt"></i>
-                </div>
-                <p class="text-gray-700">+91 9876543210</p>
-              </div>
-              <div class="flex items-start mb-6">
-                <div class="text-kigaCyan mr-3 mt-1">
-                  <i class="fas fa-clock"></i>
-                </div>
-                <p class="text-gray-700">
-                  Open daily from 11:00 AM to 11:00 PM
-                </p>
-              </div>
+              <div id="flagship-details"></div>
+
               <button
                 id="get-directions-btn"
-                data-address="123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001"
-                class="w-full bg-kigaCyan text-white py-3 rounded-full hover:bg-kigaCyanDark transition-colors duration-300 font-semibold"
+                class="w-full bg-kigaCyan text-white py-3 rounded-full hover:bg-kigaCyanDark transition-colors duration-300 font-semibold mt-4"
               >
                 Get Directions
               </button>
@@ -198,83 +177,10 @@
                 <h3 class="text-lg font-bold text-kigaBrown mb-4">
                   Other Locations
                 </h3>
-                <div class="h-64 overflow-y-auto pr-2">
-                  <div
-                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
-                  >
-                    <p class="font-semibold text-kigaBrown">
-                      Mumbai - Bandra West
-                    </p>
-                    <p class="text-sm text-gray-700">
-                      Linking Road, Bandra West, Mumbai, MH
-                    </p>
-                    <a
-                      href="tel:+919988776655"
-                      class="text-kigaCyan text-sm hover:underline"
-                      >+91 9988776655</a
-                    >
-                  </div>
-                  <div
-                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
-                  >
-                    <p class="font-semibold text-kigaBrown">
-                      Delhi - Connaught Place
-                    </p>
-                    <p class="text-sm text-gray-700">
-                      Block C, Connaught Place, New Delhi, DL
-                    </p>
-                    <a
-                      href="tel:+919765432109"
-                      class="text-kigaCyan text-sm hover:underline"
-                      >+91 9765432109</a
-                    >
-                  </div>
-                  <div
-                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
-                  >
-                    <p class="font-semibold text-kigaBrown">
-                      Bengaluru - Koramangala
-                    </p>
-                    <p class="text-sm text-gray-700">
-                      80 Feet Road, Koramangala, Bengaluru, KA
-                    </p>
-                    <a
-                      href="tel:+919123456789"
-                      class="text-kigaCyan text-sm hover:underline"
-                      >+91 9123456789</a
-                    >
-                  </div>
-                  <div
-                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
-                  >
-                    <p class="font-semibold text-kigaBrown">
-                      Hyderabad - Hitech City
-                    </p>
-                    <p class="text-sm text-gray-700">
-                      Cyber Towers, Hitech City, Hyderabad, TS
-                    </p>
-                    <a
-                      href="tel:+918765432109"
-                      class="text-kigaCyan text-sm hover:underline"
-                      >+91 8765432109</a
-                    >
-                  </div>
-                  <div
-                    class="mb-4 pb-4 border-b border-gray-100 last:border-b-0"
-                  >
-                    <p class="font-semibold text-kigaBrown">
-                      Chennai - Anna Nagar
-                    </p>
-                    <p class="text-sm text-gray-700">
-                      Anna Nagar East, Chennai, TN
-                    </p>
-                    <a
-                      href="tel:+917654321098"
-                      class="text-kigaCyan text-sm hover:underline"
-                      >+91 7654321098</a
-                    >
-                  </div>
-                </div>
+                <div
+                  id="other-locations"
+                  class="h-64 overflow-y-auto pr-2"
+                ></div>
               </div>
             </div>
           </div>
@@ -329,51 +235,301 @@
     <script>
       // Sample store locations data
       const storeLocations = [
+        // South Maharashtra
         {
-          name: "Kiga Foods Flagship Store",
+          name: "Phaltan - Kiga Foods",
           address:
-            "123 Ice Cream Street, Koregaon Park, Pune, Maharashtra 411001",
-          lat: 18.5309,
-          lng: 73.8943,
+            "PLOT NO. 32/B, RAMALAY REGANCY B, SHOP NO -B8 RING ROAD LAXMI NAGER LAKADI CHOWK, PHALTAN DIST - SATARA 415523",
+          lat: 17.9884,
+          lng: 74.4332,
         },
         {
-          name: "Mumbai - Bandra West",
-          address: "Linking Road, Bandra West, Mumbai, MH",
-          lat: 19.0592,
-          lng: 72.8299,
+          name: "Satara - Kiga Foods",
+          address:
+            "Shop No 4, Shidheshwar Plaza, Visava Camp, Sangamner Khed, Tal & Dist Satara",
+          lat: 17.6868,
+          lng: 73.9935,
         },
         {
-          name: "Delhi - Connaught Place",
-          address: "Block C, Connaught Place, New Delhi, DL",
-          lat: 28.6324,
-          lng: 77.2188,
+          name: "Karad - Kiga Foods",
+          address: "Shop No. 48, Sambhaji Market, Shaniwar Peth, Karad",
+          lat: 17.2865,
+          lng: 74.1847,
         },
         {
-          name: "Bengaluru - Koramangala",
-          address: "80 Feet Road, Koramangala, Bengaluru, KA",
-          lat: 12.9352,
-          lng: 77.6245,
+          name: "Solapur - Kiga Foods",
+          address:
+            "940, North Sadar Bazar, Gala No. 22A, Birajdar Complex Solapur, Maharashtra",
+          lat: null,
+          lng: null,
         },
         {
-          name: "Hyderabad - Hitech City",
-          address: "Cyber Towers, Hitech City, Hyderabad, TS",
-          lat: 17.4475,
-          lng: 78.3756,
+          name: "Baramati - Kiga Foods",
+          address: "Shop No 03, Subhadra Mall, MIDC Road, Baramati",
+          lat: 18.1515,
+          lng: 74.5691,
         },
         {
-          name: "Chennai - Anna Nagar",
-          address: "Anna Nagar East, Chennai, TN",
-          lat: 13.0784,
-          lng: 80.2081,
+          name: "Malegaon Baramati - Kiga Foods",
+          address:
+            "Kiga Ice creams shop no 1 near Taware Petrol Pump Malegaon bk tal. Baramati",
+          lat: 18.154,
+          lng: 74.5672,
+        },
+        // North Maharashtra
+        {
+          name: "Manchar - Kiga Foods",
+          address: "Milkat No-717, Ekalhare, Manchar, Tal Ambegaon, Dist Pune",
+          lat: 19.0086,
+          lng: 73.9472,
+        },
+        {
+          name: "Otur - Kiga Foods",
+          address:
+            "Gat No.81/2/A, Village Dumbarwadi, Tal Junnar, Dist Pune 412409",
+          lat: 19.1829,
+          lng: 73.9875,
+        },
+        {
+          name: "Nashik - Kiga Foods",
+          address:
+            "Ground floor, Shree Ganesh Kuber, Gangapur Road, Thatte Nagar, Nashik, Maharashtra 42205",
+          lat: 20.0003,
+          lng: 73.7514,
+        },
+        // East Maharashtra
+        {
+          name: "Nagpur - Kiga Foods",
+          address:
+            "Suraj Palace Shop no.1 near Dhande hospital, Ravi nagar square, Nagpur 440011",
+          lat: 21.1484,
+          lng: 79.0635,
+        },
+        {
+          name: "Amravati - Kiga Foods",
+          address:
+            "Suraj Palace Shop no.1 near Dhande hospital, Ravi nagar square, Nagpur 440012",
+          lat: 21.1484,
+          lng: 79.0635,
+        },
+        // Others
+        {
+          name: "Saradwadi - Kiga Foods",
+          address: "Saradwadi",
+          lat: 18.1982,
+          lng: 74.4829,
+        },
+        {
+          name: "Mangalwedha - Kiga Foods",
+          address: "Manglwedha",
+          lat: null,
+          lng: null,
+        },
+        // Pune Region
+        {
+          name: "Punawale - Kiga Foods",
+          address:
+            "Shop No:31, R9 Life Republic, Marunji, Tal Mulshi District Pune 411057",
+          lat: 18.594,
+          lng: 73.6995,
+        },
+        {
+          name: "Nal Stop - Kiga Foods",
+          address: "Shop no.5, Meenal Arcade, Nal Stop, Pune 411004",
+          lat: 18.5099,
+          lng: 73.8297,
+        },
+        {
+          name: "Vadgaon Sheri - Kiga Foods",
+          address:
+            "Shop no.10, Survey no.21/3, near Bramha corp, Vadgaon Sheri, Pune",
+          lat: 18.5524,
+          lng: 73.9254,
+        },
+        {
+          name: "Katraj - Kiga Foods",
+          address:
+            "S.No.-19/1, Guru Mitra Bunglow, Gokulnager, Katraj-Kindhwa Road, Opp Yashashree Society Wing C, Pune",
+          lat: 18.4472,
+          lng: 73.8725,
+        },
+        {
+          name: "Kunjirwadi - Kiga Foods",
+          address:
+            "Gat No 328, Near Saraswati Mangal Karyalay, Saswad Hadpsar Road, Kalewadi",
+          lat: 18.4185,
+          lng: 74.0019,
+        },
+        {
+          name: "Saswad - Kiga Foods",
+          address:
+            "Gat No 328, Near Saraswati Mangal Karyalay, Saswad Hadpsar Road, Kalewadi",
+          lat: 18.3437,
+          lng: 74.0324,
+        },
+        {
+          name: "Bhivri - Kiga Foods",
+          address:
+            "Katraj-Saswad Road, Bopdev Ghat, Bhivari Gaon, Tal-Purandar, Dist Pune",
+          lat: 18.3822,
+          lng: 73.9897,
+        },
+        // Pimpri Chinchwad
+        {
+          name: "Chakan MIDC - Kiga Foods",
+          address:
+            "Plot No-PAP 100, Phase III, Chakan Industrial Area, Kuruli, Pune",
+          lat: 18.789,
+          lng: 73.849,
+        },
+        {
+          name: "Alandi - Kiga Foods",
+          address:
+            "GAT NO-69-403, Alandi Dehu Road, Dudulgaon, Alandi Devachi, Tal Haveli, Pune MH 412105",
+          lat: 18.6774,
+          lng: 73.899,
+        },
+        {
+          name: "Baner - Kiga Foods",
+          address: "20, Sneha Park, Pan Card Club Road, Baner, Pune",
+          lat: 18.5606,
+          lng: 73.779,
+        },
+        {
+          name: "Wakad - Kiga Foods",
+          address:
+            "Shop No 4, Sonigara Laurel, Mankar Chowk, Kaspatewasti, Wakad, Pune",
+          lat: 18.5979,
+          lng: 73.7542,
+        },
+        {
+          name: "Pimple Saudagar - Kiga Foods",
+          address: "R Y Enterprises Kiga Franchisee (Pimple Saudagar), Pune",
+          lat: 18.6,
+          lng: 73.7891,
+        },
+        {
+          name: "Ravet - Kiga Foods",
+          address:
+            "Shop no.8, Pawaini Prime, Ravet, Pune, Near Hotel Punjab Street",
+          lat: null,
+          lng: null,
+        },
+        {
+          name: "Kiwale - Kiga Foods",
+          address:
+            "Shop No-A15, Little Earth, Masulkar City, Kiwale Gaonthan, Dheu Road, Pune MH 412101",
+          lat: 18.661,
+          lng: 73.735,
+        },
+        {
+          name: "Talegaon Dabhade - Kiga Foods",
+          address:
+            "Plot No 50/51, Shop No.01, Pachwati Colony, Corporation Bank Nr, Talegaon Dabhade Tal Maval Dist Pune",
+          lat: 18.7354,
+          lng: 73.6821,
+        },
+        {
+          name: "Lonavala - Kiga Foods",
+          address:
+            "Gat No.139, Milkat No.97, Village Sate, Tal Maval, Dist Pune 412106",
+          lat: 18.7482,
+          lng: 73.4953,
+        },
+        // Mumbai
+        {
+          name: "Kamothe - Kiga Foods",
+          address:
+            "Shop No.27, Anand Sagar, Plot No.34, Sector 17, Vashi, Navi Mumbai",
+          lat: 19.033,
+          lng: 73.0535,
+        },
+        {
+          name: "Belapur - Kiga Foods",
+          address:
+            "Shop No-03, Plot No-75, Sector No-19/20, Belapur, Navi Mumbai, Maharashtra 400614",
+          lat: 19.0201,
+          lng: 73.0251,
+        },
+        {
+          name: "Nerul - Kiga Foods",
+          address:
+            "Sagar Darshan Tower, Shop No.03, Plot No.38, Ch.Shivaji Maharaj Chouk, Near Pam Beach, Nerul, Navi Mumbai",
+          lat: 19.0325,
+          lng: 73.0187,
+        },
+        {
+          name: "Mira Road - Kiga Foods",
+          address:
+            "Shop No.28, Green Avenue CHS, Near Balaji Hotel, Sector 5, Shanti Park, Mira Road East, Mumbai 401107",
+          lat: 19.2869,
+          lng: 72.8685,
         },
       ];
+
+      const flagship = storeLocations[0];
+      const otherStores = storeLocations.slice(1);
+
+      // Populate flagship
+      const flagshipDetails = document.getElementById("flagship-details");
+      flagshipDetails.innerHTML = `
+  <div class="flex items-start mb-4">
+    <div class="text-kigaCyan mr-3 mt-1">
+      <i class="fas fa-map-marker-alt"></i>
+    </div>
+    <p class="text-gray-700">${flagship.address}</p>
+  </div>
+  <div class="flex items-start mb-4">
+    <div class="text-kigaCyan mr-3 mt-1">
+      <i class="fas fa-phone-alt"></i>
+    </div>
+    <p class="text-gray-700">${flagship.phone}</p>
+  </div>
+  <div class="flex items-start mb-6">
+    <div class="text-kigaCyan mr-3 mt-1">
+      <i class="fas fa-clock"></i>
+    </div>
+    <p class="text-gray-700">${flagship.timings}</p>
+  </div>
+`;
+
+      // Set Get Directions button
+      const directionsBtn = document.getElementById("get-directions-btn");
+      directionsBtn.dataset.address = flagship.address;
+      directionsBtn.addEventListener("click", () => {
+        const query = encodeURIComponent(flagship.address);
+        window.open(
+          `https://www.google.com/maps/search/?api=1&query=${query}`,
+          "_blank"
+        );
+      });
+
+      // Populate other locations
+      const otherContainer = document.getElementById("other-locations");
+      otherStores.forEach((store) => {
+        const div = document.createElement("div");
+        div.className = "mb-4 pb-4 border-b border-gray-100 last:border-b-0";
+        div.innerHTML = `
+    <p class="font-semibold text-kigaBrown">${store.name}</p>
+    <p class="text-sm text-gray-700">${store.address}</p>
+    ${
+      store?.phone
+        ? `<a href="tel:${store.phone?.replace(
+            /\s+/g,
+            ""
+          )}" class="text-kigaCyan text-sm hover:underline">${store?.phone}</a>`
+        : `<p></p>`
+    }
+  `;
+        otherContainer.appendChild(div);
+      });
 
       let map;
       let markers = []; // Array to hold map markers
 
       function initMap() {
         // Initialize map centered on India or a default location
-        const center = { lat: 20.5937, lng: 78.9629 }; // Center of India
+        const center = { lat: 18.5524, lng: 73.9254 }; // Center of India
         map = new google.maps.Map(document.getElementById("map"), {
           zoom: 5,
           center: center,
