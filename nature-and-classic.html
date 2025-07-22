@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiga Ice Cream Flavors - Premium Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              // RENAMED for clarity: kigabg-kigaCyan is now kigaCyan
+              kigaCyan: "#20d1da",
+              kigaCyanDark: "#18a1aa", // ADDED for better hover effects
+              kigaCream: "#E9E8FC",
+              kigaBrown: "#6B4C3B",
+              kigaGold: "#FFD700",
+            },
+            fontFamily: {
+              display: ['"Playfair Display"', "serif"],
+              body: ['"Poppins"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --kigaCyan: #20d1da;
+        --kigaCyanDark: #18a1aa;
+        --kigaCream: #faf9f7;
+        --kigaBrown: #6b4c3b;
+        --kigaGold: #ffd700;
+        --gradient-primary: linear-gradient(135deg, #20d1da 0%, #18a1aa 100%);
+        --gradient-secondary: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+        --gradient-tertiary: linear-gradient(135deg, #6b4c3b 0%, #8b6f47 100%);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(180deg, #faf9f7 0%, #ffffff 100%);
+        overflow-x: hidden;
+      }
+
+      .playfair {
+        font-family: "Playfair Display", serif;
+      }
+
+      .hero-bg {
+        background: linear-gradient(
+          135deg,
+          rgba(32, 209, 218, 0.1) 0%,
+          rgba(255, 215, 0, 0.1) 100%
+        );
+        backdrop-filter: blur(10px);
+      }
+
+      .card-hover {
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .card-hover:hover {
+        transform: translateY(-20px) scale(1.02);
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
+      }
+
+      .image-hover {
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        overflow: hidden;
+      }
+
+      .image-hover img {
+        transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .image-hover:hover img {
+        transform: scale(1.1) rotate(2deg);
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .gradient-text {
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .btn-primary {
+        background: var(--gradient-primary);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .btn-primary::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.3),
+          transparent
+        );
+        transition: left 0.6s;
+      }
+
+      .btn-primary:hover::before {
+        left: 100%;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(32, 209, 218, 0.4);
+      }
+
+      .btn-secondary {
+        background: var(--gradient-tertiary);
+        transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .btn-secondary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 20px 40px rgba(107, 76, 59, 0.4);
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(32, 209, 218, 0.3),
+          transparent
+        );
+        margin: 4rem 0;
+      }
+
+      .sparkle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: var(--kigaGold);
+        border-radius: 50%;
+        animation: sparkle 2s infinite;
+      }
+
+      @keyframes sparkle {
+        0%,
+        100% {
+          opacity: 0;
+          transform: scale(0);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      .text-shadow {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .glassmorphism {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .feature-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .feature-card:hover {
+        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-body bg-kigaCream text-kigaBrown">
+    <!-- Hero Section -->
+    <nav
+      id="main-nav"
+      class="fixed top-0 w-full z-50 transition-all duration-300 py-6"
+    >
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <img
+            id="nav-logo"
+            src="../logo file-03.webp"
+            alt="Kiga Foods Logo"
+            class="h-24 transition-all duration-300"
+          />
+        </div>
+
+        <div
+          id="desktop-menu-links"
+          class="hidden md:flex space-x-8 text-white"
+        >
+          <a
+            href="../index.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="../about.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="../locations.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="../franchise.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="../contact.html"
+            class="font-medium hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <button id="mobile-menu-button" class="md:hidden text-white">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white absolute w-full left-0 right-0 shadow-lg"
+      >
+        <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+          <a
+            href="#home"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Our Flavors</a
+          >
+          <a
+            href="#flavors"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Stores</a
+          >
+          <a
+            href="#franchise"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Franchise</a
+          >
+          <a
+            href="#contact"
+            class="font-medium text-kigaBrown hover:text-kigaCyan transition-colors"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      class="bg-kigaCream pt-40 px-6 text-center relative overflow-hidden"
+    >
+      <div
+        class="sparkle"
+        style="top: 20%; left: 10%; animation-delay: 0s"
+      ></div>
+      <div
+        class="sparkle"
+        style="top: 40%; right: 15%; animation-delay: 1s"
+      ></div>
+      <div
+        class="sparkle"
+        style="bottom: 30%; left: 20%; animation-delay: 2s"
+      ></div>
+
+      <div class="max-w-4xl mx-auto relative z-10">
+        <h1
+          class="hero-title playfair text-5xl md:text-7xl font-bold text-shadow mb-6 floating-animation"
+        >
+          <span class="gradient-text">Natural and </span>
+          <span style="color: var(--kigaBrown)">Classic</span>
+        </h1>
+        <p
+          class="text-xl md:text-2xl text-gray-600 mb-8 font-light leading-relaxed max-w-2xl mx-auto"
+        >
+          Where tradition meets innovation in every spoonful. Handcrafted with
+          passion, served with elegance.
+        </p>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 py-16" id="flavor-section"></section>
+
+    <!-- Call to Action -->
+    <!-- <section
+      class="bg-gradient-to-r from-cyan-500 to-blue-600 py-20 px-6 text-center text-white"
+    >
+      <div class="max-w-4xl mx-auto">
+        <h3 class="playfair text-4xl md:text-5xl font-bold mb-6">
+          Ready to Experience
+          <span style="color: var(--kigaGold)">Excellence</span>?
+        </h3>
+        <p class="text-xl mb-8 opacity-90">
+          Join thousands of satisfied customers who've discovered the Kiga
+          difference
+        </p>
+        <button
+          class="bg-white text-cyan-600 px-12 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-all duration-300 hover:transform hover:scale-105"
+        >
+          Order Your Collection Today
+        </button>
+      </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="bg-kigaBrown text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <img
+              src="KigaLogo-removebg-preview.webpamerican nut.webp"
+              alt="Kiga Foods Logo"
+              class="h-14 mb-4"
+            />
+            <p class="text-sm mb-4">
+              Kiga Foods brings you premium ice creams with authentic Indian
+              flavors, crafted using traditional recipes and the finest
+              ingredients.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white hover:text-kigaGold transition-colors duration-300"
+              >
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="../KigaDemo.html"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#flavors"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Our Flavors</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#franchise"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Franchise</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Support</h4>
+            <ul class="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Shipping & Returns</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Store Policy</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Payment Methods</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >Careers</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-display font-semibold text-lg mb-4">Contact</h4>
+            <address class="text-sm not-italic mb-4">
+              Shop No. 5, Ganesh Plaza<br />
+              Pimple Gurav, Pune<br />
+              Maharashtra - 411061
+            </address>
+            <div class="space-y-1 text-sm">
+              <p>
+                <a
+                  href="tel:+919066549696"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >+91 9066549696</a
+                >
+              </p>
+              <p>
+                <a
+                  href="mailto:hello@kigafoods.com"
+                  class="hover:text-kigaGold transition-colors duration-300"
+                  >hello@kigafoods.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="pt-8 border-t border-white border-opacity-20 flex flex-col md:flex-row justify-between items-center text-sm"
+        >
+          <p>&copy; 2023 Kiga Foods. All rights reserved.</p>
+          <div class="mt-4 md:mt-0">
+            <a
+              href="#"
+              class="hover:text-kigaGold transition-colors duration-300"
+              >Privacy Policy</a
+            >
+            <span class="mx-2">•</span>
+            <a
+              href="#"
+              class="hover:text-kigaGold transition-colors duration-300"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // --- Navbar Scroll Logic ---
+      const nav = document.getElementById("main-nav");
+      const logo = document.getElementById("nav-logo");
+      const desktopLinks = document.getElementById("desktop-menu-links");
+      const mobileMenuButton = document.getElementById("mobile-menu-button");
+      const scrollThreshold = 50; // Pixels to scroll before changing navbar
+
+      const handleScroll = () => {
+        if (window.scrollY > scrollThreshold) {
+          nav.classList.add("bg-white", "shadow-md", "py-2");
+          nav.classList.remove("py-6");
+          logo.classList.add("h-16");
+          logo.classList.remove("h-24");
+          desktopLinks.classList.remove("text-white");
+          desktopLinks.classList.add("text-kigaBrown");
+          mobileMenuButton.classList.remove("text-white");
+          mobileMenuButton.classList.add("text-kigaCyan");
+        } else {
+          nav.classList.remove("bg-white", "shadow-md", "py-2");
+          nav.classList.add("py-6");
+          logo.classList.remove("h-16");
+          logo.classList.add("h-24");
+          desktopLinks.classList.add("text-white");
+          desktopLinks.classList.remove("text-kigaBrown");
+          mobileMenuButton.classList.add("text-white");
+          mobileMenuButton.classList.remove("text-kigaCyan");
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      // --- Mobile Menu Toggle ---
+      const mobileMenu = document.getElementById("mobile-menu");
+      mobileMenuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      const flavors = [
+        {
+          name: "American Nuts",
+          image: "../Ice cream scoops/Natural and classics/american nut.webp",
+          tag: "Nutty Delight",
+          description:
+            "Enjoy the Taste of Crunchy American nuts in smooth, creamy ice cream.",
+          tagColor: "bg-amber-100 text-amber-800",
+          imageBg: "from-yellow-50 to-amber-50",
+          textBg: "from-white to-gray-50",
+        },
+        {
+          name: "Anjeer Badam <span style='color: var(--kigaBrown)'>Cream</span>",
+          image:
+            "../Ice cream scoops/no added sugar/anjeer no added sugar.webp",
+          tag: "Royal Dry Fruit",
+          description:
+            "Experience the timeless pairing of sweet figs (anjeer) and crunchy almonds (badam), now in a rich and nutty ice cream. A classic dry fruit combination, transformed into a luxurious delight.",
+          tagColor: "bg-orange-100 text-orange-800",
+          imageBg: "from-orange-50 to-red-50",
+          textBg: "from-red-50 to-amber-50",
+          bullet: "Traditional Recipe",
+        },
+        {
+          name: "Black Currant",
+          image: "../Ice cream scoops/Natural and classics/black currant.webp",
+          tag: "Bold & Tangy",
+          description:
+            "You might think it's a simple choice, but this tangy and intense indulgence is a refreshing and satisfying surprise. Get ready for a truly bold flavor experience.",
+          tagColor: "bg-purple-100 text-purple-800",
+          imageBg: "from-violet-50 to-purple-50",
+          textBg: "from-white to-gray-50",
+        },
+        {
+          name: "Bubble Gum",
+          image: "../Ice cream scoops/Natural and classics/Bubble Gum.webp",
+          tag: "Kids' Favorite",
+          description:
+            "A vibrant blue ice cream that's both playful and nostalgic. Every lick brings back sweet childhood memories. A treat kids truly love.",
+          tagColor: "bg-pink-100 text-pink-800",
+          imageBg: "from-pink-50 to-rose-50",
+          textBg: "from-rose-50 to-fuchsia-50",
+        },
+        {
+          name: "Butterscotch",
+          image: "../Ice cream scoops/Natural and classics/BUTTERSCOTCH.webp",
+          tag: "Classic Comfort",
+          description:
+            "Rich and sweet butterscotch ice cream. A timeless classic, crafted for a truly creamy experience.",
+          tagColor: "bg-yellow-100 text-yellow-800",
+          imageBg: "from-yellow-50 to-amber-50",
+          textBg: "from-white to-amber-50",
+        },
+        {
+          name: "Cotton Candy",
+          image: "../Ice cream scoops/Natural and classics/cotton candy.webp",
+          tag: "Fun & Whimsical",
+          description:
+            "This Ice Cream is a sugary pleasure, carefully crafted to melt like real cotton candy on your palate. It's a whimsical delight that brings the joy of the carnival to your home.",
+          tagColor: "bg-rose-100 text-rose-800",
+          imageBg: "from-rose-50 to-pink-50",
+          textBg: "from-pink-50 to-purple-50",
+        },
+        {
+          name: "Fruit Blast",
+          image: "../Ice cream scoops/Natural and classics/fruit blast.webp",
+          tag: "Fruity Fresh",
+          description:
+            "Packed with real fruit chunks, this scoop delivers a delightful burst of flavor with every bite. Juicy, lively, and oh-so-refreshing!",
+          tagColor: "bg-green-100 text-green-800",
+          imageBg: "from-green-50 to-emerald-50",
+          textBg: "from-emerald-50 to-cyan-50",
+        },
+        {
+          name: "Honey Nut Crunch",
+          image:
+            "../Ice cream scoops/Natural and classics/honey nut crunch.webp",
+          tag: "Crunchy Sweetness",
+          description:
+            "Experience the perfect blend of sweet, golden honey and satisfyingly crunchy nuts. A delightful texture and flavor sensation that's both comforting and exciting.",
+          tagColor: "bg-amber-100 text-amber-800",
+          imageBg: "from-amber-50 to-orange-50",
+          textBg: "from-orange-50 to-red-50",
+        },
+        {
+          name: "Kesar Pista",
+          image: "../Ice cream scoops/Natural and classics/kesar pista.webp",
+          tag: "Luxury Classic",
+          description:
+            "Aromatic saffron and crunchy pistachio. A traditional, luxurious treat.",
+          tagColor: "bg-yellow-100 text-yellow-800",
+          imageBg: "from-yellow-50 to-amber-50",
+          textBg: "from-amber-50 to-green-50",
+        },
+        {
+          name: "Lychee Cherry",
+          image: "../Ice cream scoops/Natural and classics/lychie cherry.webp",
+          tag: "Exotic Fusion",
+          description:
+            "The sweet tartness of cherries meets the exotic sweetness of lychees in this irresistible ice cream. A taste sensation you won't forget.",
+          tagColor: "bg-rose-100 text-rose-800",
+          imageBg: "from-rose-50 to-pink-50",
+          textBg: "from-pink-50 to-red-50",
+        },
+        {
+          name: "Mango",
+          image: "../Ice cream scoops/Natural and classics/mango.webp",
+          tag: "Summer Classic",
+          description:
+            "Real ripe mangoes blended into a creamy, refreshing treat. Taste the sunshine!",
+          tagColor: "bg-yellow-100 text-yellow-800",
+          imageBg: "from-yellow-50 to-lime-50",
+          textBg: "from-lime-50 to-green-50",
+        },
+        {
+          name: "Mixed Berries",
+          image: "../Ice cream scoops/Natural and classics/mixed berries.webp",
+          tag: "Berry Bliss",
+          description:
+            "A berry lover’s dream! Bursting with raspberries, blueberries, and more—this tangy mix is a scoop of fruity fun.",
+          tagColor: "bg-purple-100 text-purple-800",
+          imageBg: "from-purple-50 to-violet-50",
+          textBg: "from-violet-50 to-fuchsia-50",
+        },
+        {
+          name: "Muskmelon",
+          image: "../Ice cream scoops/Natural and classics/muskmelon.webp",
+          tag: "Cool & Refreshing",
+          description:
+            "Sweet, smooth, and refreshing. Just like a ripe muskmelon! Enjoy a cool, mellow treat with one of our best product.",
+          tagColor: "bg-green-100 text-green-800",
+          imageBg: "from-green-50 to-teal-50",
+          textBg: "from-teal-50 to-cyan-50",
+        },
+        {
+          name: "Orange and Cream",
+          image:
+            "../Ice cream scoops/Natural and classics/orange and cream.webp",
+          tag: "Citrus Zing",
+          description:
+            "Super citrus and Super sweet both in one scoop! Creamy ice cream with a tangy orange blast. A Flavor explosion you won't forget.",
+          tagColor: "bg-orange-100 text-orange-800",
+          imageBg: "from-orange-50 to-yellow-50",
+          textBg: "from-yellow-50 to-amber-50",
+        },
+        {
+          name: "Pineapple Cranberry",
+          image:
+            "../Ice cream scoops/Natural and classics/pineapple cranberry.webp",
+          tag: "Tropical Twist",
+          description:
+            "Savor the perfect balance of Tropical Pineapple Sweetness and tart tangy cranberries. Our ice cream offers a refreshing flavor experience. A delightful twist on a classic treat.",
+          tagColor: "bg-amber-100 text-amber-800",
+          imageBg: "from-amber-50 to-orange-50",
+          textBg: "from-orange-50 to-red-50",
+        },
+        {
+          name: "Pink Guava",
+          image: "../Ice cream scoops/Natural and classics/pink guava.webp",
+          tag: "Tropical Spice",
+          description:
+            "Dive into the vibrant sweetness of tropical pink guava, sparked with a playful hint of chili and salt. A sweet and tangy surprise in every bite.",
+          tagColor: "bg-rose-100 text-rose-800",
+          imageBg: "from-rose-50 to-pink-50",
+          textBg: "from-pink-50 to-orange-50",
+        },
+        {
+          name: "Red Velvet",
+          image: "../Ice cream scoops/Natural and classics/red velvet.webp",
+          tag: "Dessert Inspired",
+          description:
+            "Experience the unmistakable taste of red velvet cake in our smooth, creamy ice cream. A velvety delight that's rich and satisfying.",
+          tagColor: "bg-red-100 text-red-800",
+          imageBg: "from-red-50 to-pink-50",
+          textBg: "from-pink-50 to-rose-50",
+        },
+        {
+          name: "Shahi Gulkand",
+          image: "../Ice cream scoops/Natural and classics/shahi gulkand.webp",
+          tag: "Royal Indulgence",
+          description:
+            "Our signature gulkand ice cream, slightly sweeter than others, where fragrant rose petal jam is expertly blended into creamy perfection. An aromatic and luxurious treat, offering a truly royal experience.",
+          tagColor: "bg-pink-100 text-pink-800",
+          imageBg: "from-pink-50 to-rose-50",
+          textBg: "from-rose-50 to-purple-50",
+        },
+        {
+          name: "Sitaphal",
+          image: "../Ice cream scoops/Natural and classics/sitaphal.webp",
+          tag: "Rare & Nostalgic",
+          description:
+            "Indulge in the naturally sweet and comforting embrace of our creamy sitaphal ice cream.",
+          tagColor: "bg-emerald-100 text-emerald-800",
+          imageBg: "from-green-50 to-emerald-50",
+          textBg: "from-emerald-50 to-teal-50",
+        },
+        {
+          name: "Strawberry",
+          image: "../Ice cream scoops/Natural and classics/strawberry.webp",
+          tag: "Classic Fresh",
+          description:
+            "Creamy, sweet, and delicious. A simple yet irresistible classic that's perfect for any occasion.",
+          tagColor: "bg-red-100 text-red-800",
+          imageBg: "from-red-50 to-pink-50",
+          textBg: "from-pink-50 to-rose-50",
+        },
+        {
+          name: "Strawberry Cheesecake",
+          image:
+            "../Ice cream scoops/Natural and classics/strawberry cheese cake.webp",
+          tag: "Dessert Fusion",
+          description:
+            "Velvety cheesecake meets juicy strawberry swirls in this indulgent creation. Dessert and ice cream rolled into one unforgettable scoop.",
+          tagColor: "bg-yellow-100 text-yellow-800",
+          imageBg: "from-yellow-50 to-amber-50",
+          textBg: "from-amber-50 to-red-50",
+        },
+        {
+          name: "Tender Coconut",
+          image: "../Ice cream scoops/Natural and classics/tender coconut.webp",
+          tag: "Tropical Escape",
+          description:
+            "Creamy, light, and soothing. Our tender coconut ice cream is a tropical getaway in every scoop.",
+          tagColor: "bg-cyan-100 text-cyan-800",
+          imageBg: "from-cyan-50 to-blue-50",
+          textBg: "from-blue-50 to-indigo-50",
+        },
+      ];
+      const container = document.getElementById("flavor-section");
+
+      flavors.forEach((flavor, i) => {
+        const isEven = i % 2 === 0;
+        const card = document.createElement("div");
+        card.className =
+          "card-hover bg-white rounded-3xl shadow-xl overflow-hidden mb-20";
+
+        card.innerHTML = `
+          <div class="grid md:grid-cols-2 min-h-[400px]">
+            ${
+              isEven
+                ? `
+              <div class="bg-gradient-to-br ${flavor.imageBg} flex items-center justify-center p-8">
+                <div class="relative">
+                  <img src="${flavor.image}" alt="${flavor.name}" class="rounded-2xl shadow-2xl max-w-full h-auto" />
+                </div>
+              </div>
+              <div class="flex items-center p-12 bg-gradient-to-br ${flavor.textBg}">
+                <div class="space-y-6">
+                  <div class="inline-block px-4 py-1 ${flavor.tagColor} rounded-full text-sm font-medium">
+                    ${flavor.tag}
+                  </div>
+                  <h2 class="playfair text-4xl md:text-5xl font-bold text-gray-800 leading-tight">${flavor.name}</h2>
+                  <p class="text-gray-600 text-lg leading-relaxed">${flavor.description}</p>
+                </div>
+              </div>
+              `
+                : `
+              <div class="flex items-center p-12 bg-gradient-to-br ${
+                flavor.textBg
+              } order-2 md:order-1">
+                <div class="space-y-6">
+                  <div class="inline-block px-4 py-1 ${
+                    flavor.tagColor
+                  } rounded-full text-sm font-medium">
+                    ${flavor.tag}
+                  </div>
+                  <h2 class="playfair text-4xl md:text-5xl font-bold text-gray-800 leading-tight">${
+                    flavor.name
+                  }</h2>
+                  <p class="text-gray-600 text-lg leading-relaxed">${
+                    flavor.description
+                  }</p>
+                  ${
+                    flavor.bullet
+                      ? `<div class="flex items-center space-x-4 text-sm text-gray-500">
+                          <span class="flex items-center">
+                            <span class="w-2 h-2 bg-brown-500 rounded-full mr-2"></span>
+                            ${flavor.bullet}
+                          </span>
+                        </div>`
+                      : ""
+                  }
+                </div>
+              </div>
+              <div class="bg-gradient-to-br ${
+                flavor.imageBg
+              } flex items-center justify-center p-8 order-1 md:order-2">
+                <div class="relative">
+                  <img src="${flavor.image}" alt="${
+                    flavor.name
+                  }" class="rounded-2xl shadow-2xl max-w-full h-auto" />
+                </div>
+              </div>
+              `
+            }
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    });
+  </script>
+</html>
